@@ -4,7 +4,10 @@ using System.Text;
 
 namespace Laboratory.DAL.Entities
 {
-    class Title
+    public class Title
     {
+        public int Id { get; set; }
+        public string Male { get; set; }
+        public string Female { get; set; }
     }
 }
