@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9zsaTw+YqMOWdKu+hfIkMtQfLUwCdtRSOddDhG0fWWnrGwkvyrzWahoSM1k1VGckryfwrWvQFAjWzg320NSLYQ==",
+  "dgSpecHash": "8vutHOQO2vtfsfwYkkvS4CAxNuUeYgtsKFYKajBr1v3n4wiTpxL/nutdZc0/N0J7UfzOnLJBHWoctqMnyXS4fA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.API\\Laboratory.API.csproj",
+  "projectFilePath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.API\\Laboratory.API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

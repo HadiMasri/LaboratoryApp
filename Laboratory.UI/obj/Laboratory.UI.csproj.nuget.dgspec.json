@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.UI\\Laboratory.UI.csproj": {}
+    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.UI\\Laboratory.UI.csproj": {
+    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.UI\\Laboratory.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
         "projectName": "Laboratory.UI",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.UI\\Laboratory.UI.csproj",
+        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
         "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.UI\\obj\\",
+        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.Domain\\Laboratory.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj",
       "projectName": "Laboratory.Domain",
-      "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.Domain\\Laboratory.Domain.csproj",
+      "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj",
       "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.Domain\\obj\\",
+      "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",

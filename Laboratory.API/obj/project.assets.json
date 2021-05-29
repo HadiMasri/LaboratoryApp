@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.API\\Laboratory.API.csproj",
+      "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.API\\Laboratory.API.csproj",
       "projectName": "Laboratory.API",
-      "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.API\\Laboratory.API.csproj",
+      "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.API\\Laboratory.API.csproj",
       "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.API\\obj\\",
+      "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",

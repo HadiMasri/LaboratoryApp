@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.DAL\\Laboratory.DAL.csproj": {}
+    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.DAL\\Laboratory.DAL.csproj": {
+    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.DAL\\Laboratory.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj",
         "projectName": "Laboratory.DAL",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.DAL\\Laboratory.DAL.csproj",
+        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj",
         "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\Laboratory\\Laboratory.DAL\\obj\\",
+        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
