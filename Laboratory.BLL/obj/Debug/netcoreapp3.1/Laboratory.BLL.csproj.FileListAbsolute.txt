@@ -1,0 +1,9 @@
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.BLL.deps.json
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.BLL.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.BLL.pdb
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.csprojAssemblyReference.cache
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.AssemblyInfoInputs.cache
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.AssemblyInfo.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.pdb
