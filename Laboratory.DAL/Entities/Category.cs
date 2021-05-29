@@ -4,7 +4,9 @@ using System.Text;
 
 namespace Laboratory.DAL.Entities
 {
-    class Category
+    public class Category
     {
+        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
