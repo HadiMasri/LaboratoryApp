@@ -10,15 +10,16 @@ namespace Laboratory.DAL
     {
         public LaboratoryDbContext(DbContextOptions<LaboratoryDbContext> options) : base(options)
         { }
-        public DbSet<Adress> Adresses { get; set; }
+        public DbSet<Adress> Adress { get; set; }
+        public DbSet<Sex> Sex { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Labo> Labos { get; set; }
+        
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Patient_Test> patient_Tests { get; set; }
-        public DbSet<Sex> Sexes { get; set; }
         public DbSet<Test> Tests { get; set; }
         public DbSet<TestRange> TestRanges { get; set; }
-        public DbSet<Title> Titles { get; set; }
+        public DbSet<Title> Title { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

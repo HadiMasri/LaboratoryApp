@@ -11,13 +11,11 @@ namespace Laboratory.DAL.Configurations
             builder.Property(t => t.ToAge)
                 .IsRequired()
                 .HasMaxLength(4);
-            builder.Property(t => t.Test)
-                .IsRequired();
             builder.Property(t => t.Range)
                 .IsRequired()
                 .HasMaxLength(10);
-            builder.Property(t => t.Sex)
-               .IsRequired();
+            builder.HasOne(t => t.Sex).WithMany().HasForeignKey( s => s.SexId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(t => t.Test).WithMany().HasForeignKey(s => s.TestId).OnDelete(DeleteBehavior.NoAction);
             builder.Property(t => t.HighFrom)
                .IsRequired()
                .HasMaxLength(10);

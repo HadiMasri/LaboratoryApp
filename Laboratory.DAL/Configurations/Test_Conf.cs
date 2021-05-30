@@ -14,16 +14,16 @@ namespace Laboratory.DAL.Configurations
             builder.Property(t => t.Price)
                 .IsRequired()
                 .HasMaxLength(4);
-            builder.Property(t => t.Sex)
-                .IsRequired();
             builder.Property(t => t.Code)
                .IsRequired()
                .HasMaxLength(10);
             builder.Property(t => t.AppearName)
                .IsRequired()
                .HasMaxLength(50);
-            builder.Property(t => t.Category)
-              .IsRequired();
+            builder.HasOne(t => t.Category).WithMany().HasForeignKey(s => s.CategoryId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(t => t.Sex).WithMany().HasForeignKey(s => s.SexId).OnDelete(DeleteBehavior.NoAction);
+
+
         }
     }
 }
