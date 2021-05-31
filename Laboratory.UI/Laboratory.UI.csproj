@@ -4,6 +4,25 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Materials.png" />
+    <None Remove="Assets\patient.png" />
+    <None Remove="Assets\settings.png" />
+    <None Remove="Assets\Test.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Materials.png" />
+    <Resource Include="Assets\settings.png" />
+    <Resource Include="Assets\Test.png" />
+    <Resource Include="Assets\patient.png" />
+  </ItemGroup>
 
 </Project>

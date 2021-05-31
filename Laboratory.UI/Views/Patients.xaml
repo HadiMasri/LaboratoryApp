@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="Laboratory.UI.Views.Patients"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Laboratory.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1500" >
+    <Grid Background="White" RenderTransformOrigin="0.5,0.52"  >
+        <GroupBox  materialDesign:ColorZoneAssist.Mode="Custom" Background="#fcfcfc" materialDesign:ColorZoneAssist.Background="#24426E" materialDesign:ColorZoneAssist.Foreground="White"  Header="New Patient" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,20,0,0" Height="250" Width="758" >
+            <GroupBox.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
+            </GroupBox.BitmapEffect>
+        </GroupBox>
+        <ComboBox materialDesign:HintAssist.Hint="Title" Margin="-600,50,0,500" VerticalAlignment="Top" Height="43" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="-600,100,0,400" materialDesign:HintAssist.Hint="Name" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="-600,150,0,300" materialDesign:HintAssist.Hint="Last Name" TextWrapping="Wrap" VerticalAlignment="Top"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="-200,50,0,500" materialDesign:HintAssist.Hint="Father Name" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="-200,100,0,400" materialDesign:HintAssist.Hint="Mother Name" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="-200,150,0,300" materialDesign:HintAssist.Hint="Age" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="200,50,0,500" materialDesign:HintAssist.Hint="Arrive Time" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <ComboBox materialDesign:HintAssist.Hint="Sex" Margin="200,100,0,400" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="200,150,0,300" materialDesign:HintAssist.Hint="Dr Name" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,50,0,500" materialDesign:HintAssist.Hint="Room Nr" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,100,0,400" materialDesign:HintAssist.Hint="Phone Nr" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,150,0,300" materialDesign:HintAssist.Hint="The Diagnosis" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="100" Background="#090D40" Margin="600,220,0,300" VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" />
+
+
+
+
+
+
+
+        <DataGrid ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="-1050 80 0 0" Height="600" Width="200" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
+            <DataGrid.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
+            </DataGrid.BitmapEffect>
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#24426E" />
+                    <Setter Property="Foreground" Value="White" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Nr" Binding="{Binding Nr}"     Width="70"/>
+                <DataGridTextColumn  Header="Patients" Binding="{Binding Patients}"     Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,13 +1,13 @@
 ﻿using System;
 
 
-namespace Laboratory.DAL.Entities
+namespace Laboratory.Domain.DTO
 {
-    public class Patient
+    public class PatientDto
     {
         public int Id { get; set; }
         public int TitleId { get; set; }
-        public Title Title { get; set; }
+        public TitleDto Title { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
         public string FatherName { get; set; }
@@ -19,6 +19,6 @@ namespace Laboratory.DAL.Entities
         public int PhoneNr { get; set; }
         public string Diagnosis { get; set; }
         public int SexId { get; set; }
-        public Sex Sex { get; set; }
+        public SexDto Sex { get; set; }
     }
 }

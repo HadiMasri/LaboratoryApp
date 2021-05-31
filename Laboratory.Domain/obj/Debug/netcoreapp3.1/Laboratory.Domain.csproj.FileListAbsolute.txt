@@ -1,7 +1,6 @@
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Domain\bin\Debug\netcoreapp3.1\Laboratory.Domain.deps.json
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Domain\bin\Debug\netcoreapp3.1\Laboratory.Domain.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Domain\bin\Debug\netcoreapp3.1\Laboratory.Domain.pdb
-C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Domain\obj\Debug\netcoreapp3.1\Laboratory.Domain.csprojAssemblyReference.cache
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Domain\obj\Debug\netcoreapp3.1\Laboratory.Domain.AssemblyInfoInputs.cache
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Domain\obj\Debug\netcoreapp3.1\Laboratory.Domain.AssemblyInfo.cs
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Domain\obj\Debug\netcoreapp3.1\Laboratory.Domain.csproj.CoreCompileInputs.cache

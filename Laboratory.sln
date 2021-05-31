@@ -3,17 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.API", "Laboratory.API\Laboratory.API.csproj", "{D90A7634-CC22-40A5-A3A3-2065C4BB0308}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laboratory.API", "Laboratory.API\Laboratory.API.csproj", "{D90A7634-CC22-40A5-A3A3-2065C4BB0308}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.DAL", "Laboratory.DAL\Laboratory.DAL.csproj", "{06DA0267-C596-4DD4-9939-ED2B8CA0437E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laboratory.DAL", "Laboratory.DAL\Laboratory.DAL.csproj", "{06DA0267-C596-4DD4-9939-ED2B8CA0437E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.BLL", "Laboratory.BLL\Laboratory.BLL.csproj", "{4A285DE5-AADF-49C4-8A90-FEC38A1010BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laboratory.BLL", "Laboratory.BLL\Laboratory.BLL.csproj", "{4A285DE5-AADF-49C4-8A90-FEC38A1010BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.UI", "Laboratory.UI\Laboratory.UI.csproj", "{3C3C3441-1101-4321-B222-21687FF81D56}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laboratory.UI", "Laboratory.UI\Laboratory.UI.csproj", "{3C3C3441-1101-4321-B222-21687FF81D56}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Domain", "Laboratory.Domain\Laboratory.Domain.csproj", "{1DEEC1B0-742D-4663-B77C-CB12A389F186}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laboratory.Domain", "Laboratory.Domain\Laboratory.Domain.csproj", "{1DEEC1B0-742D-4663-B77C-CB12A389F186}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Utility", "Laboratory.Utility\Laboratory.Utility.csproj", "{5EC4FC62-96C2-46BB-89DF-A057B0D99835}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Laboratory.Utility", "Laboratory.Utility\Laboratory.Utility.csproj", "{5EC4FC62-96C2-46BB-89DF-A057B0D99835}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Laboratory.Shared", "Laboratory.Shared\Laboratory.Shared.csproj", "{3215AB57-7441-48C4-B3AD-EF6D943701C4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{5EC4FC62-96C2-46BB-89DF-A057B0D99835}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5EC4FC62-96C2-46BB-89DF-A057B0D99835}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5EC4FC62-96C2-46BB-89DF-A057B0D99835}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3215AB57-7441-48C4-B3AD-EF6D943701C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3215AB57-7441-48C4-B3AD-EF6D943701C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3215AB57-7441-48C4-B3AD-EF6D943701C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3215AB57-7441-48C4-B3AD-EF6D943701C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

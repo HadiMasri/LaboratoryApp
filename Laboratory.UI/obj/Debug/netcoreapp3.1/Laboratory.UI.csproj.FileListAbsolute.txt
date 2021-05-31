@@ -5,11 +5,9 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreap
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Laboratory.UI.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Laboratory.UI.pdb
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.csprojAssemblyReference.cache
-C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\MainWindow.g.cs
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\App.g.cs
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI_MarkupCompile.cache
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI_MarkupCompile.lref
-C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\MainWindow.baml
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.g.resources
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.AssemblyInfoInputs.cache
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.AssemblyInfo.cs
@@ -17,3 +15,11 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreap
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.pdb
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.genruntimeconfig.cache
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\MainWindow.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\MainWindow.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Patients.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Patients.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\MaterialDesignColors.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\MaterialDesignThemes.Wpf.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.csproj.CopyComplete

@@ -9,8 +9,8 @@
         public int LowFrom { get; set; }
         public int HighFrom { get; set; }
         public int TestId { get; set; }
-        public Test Test { get; set; }
+        public TestDto Test { get; set; }
         public int SexId { get; set; }
-        public Sex Sex { get; set; }
+        public SexDto Sex { get; set; }
     }
 }

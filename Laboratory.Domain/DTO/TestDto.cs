@@ -8,9 +8,9 @@
         public double Price { get; set; }
         public string AppearName { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public CategoryDto Category { get; set; }
         public string Note { get; set; }
         public int SexId { get; set; }
-        public Sex Sex { get; set; }
+        public SexDto Sex { get; set; }
     }
 }

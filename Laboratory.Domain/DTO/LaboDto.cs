@@ -1,8 +1,6 @@
-﻿
-
-namespace Laboratory.DAL.Entities
+﻿namespace Laboratory.Domain.DTO
 {
-    public class Labo
+    public class LaboDto
     {
         public int Id { get; set; }
         public string Name { get; set; }

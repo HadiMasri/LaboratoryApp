@@ -1,13 +1,11 @@
-﻿
-
-namespace Laboratory.DAL.Entities
+﻿namespace Laboratory.Domain.DTO
 {
-    public class Patient_Test
+    public class Patient_TestDto
     {
         public int Id { get; set; }
         public int PatientId { get; set; }
-        public Patient Patient { get; set; }
+        public PatientDto Patient { get; set; }
         public int TestId { get; set; }
-        public Test Test { get; set; }
+        public TestDto Test { get; set; }
     }
 }

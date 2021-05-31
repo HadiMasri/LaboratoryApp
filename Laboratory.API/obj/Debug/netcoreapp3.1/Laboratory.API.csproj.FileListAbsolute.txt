@@ -63,3 +63,4 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcorea
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\obj\Debug\netcoreapp3.1\Laboratory.API.csproj.CopyComplete
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.DAL.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.DAL.pdb
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\AutoMapper.dll

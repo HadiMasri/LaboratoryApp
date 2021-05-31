@@ -14,7 +14,6 @@ namespace Laboratory.DAL
         public DbSet<Sex> Sex { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Labo> Labos { get; set; }
-        
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Patient_Test> patient_Tests { get; set; }
         public DbSet<Test> Tests { get; set; }

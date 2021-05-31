@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 namespace Laboratory.DAL.UnitOfWork
 {
@@ -9,18 +7,19 @@ namespace Laboratory.DAL.UnitOfWork
     {
         private readonly LaboratoryDbContext _laboratoryDbContext;
         private IMapper _mapper;
-        public UnitOfWork()
+        public UnitOfWork(LaboratoryDbContext laboratoryDbContext, IMapper mapper)
         {
-
+            _laboratoryDbContext = laboratoryDbContext;
+            _mapper = mapper;
         }
         public void Dispose()
         {
-            throw new NotImplementedException();
+            _laboratoryDbContext.Dispose();
         }
 
-        public int Save()
+        public void Save()
         {
-            throw new NotImplementedException();
+             _laboratoryDbContext.SaveChanges();
         }
     }
 }
