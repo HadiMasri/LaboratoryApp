@@ -17,7 +17,7 @@ namespace Laboratory.Shared.ViewModels
         public int RoomNr { get; set; }
         public int PhoneNr { get; set; }
         public string Diagnosis { get; set; }
-        public int SexId { get; set; }
-        public SexViewModel Sex { get; set; }
+        public int GenderId { get; set; }
+        public GenderViewModel Gender { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace Laboratory.DAL.Configurations
                .IsRequired()
                .HasMaxLength(50);
             builder.HasOne(t => t.Category).WithMany().HasForeignKey(s => s.CategoryId).OnDelete(DeleteBehavior.NoAction);
-            builder.HasOne(t => t.Sex).WithMany().HasForeignKey(s => s.SexId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(t => t.Gender).WithMany().HasForeignKey(s => s.GenderId).OnDelete(DeleteBehavior.NoAction);
 
 
         }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Laboratory.DAL.Migrations
 {
-    public partial class InitialEntity : Migration
+    public partial class initialentities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,6 +39,19 @@ namespace Laboratory.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Gender",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Gender", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Labos",
                 columns: table => new
                 {
@@ -51,19 +64,6 @@ namespace Laboratory.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Labos", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Sex",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sex", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -91,7 +91,7 @@ namespace Laboratory.DAL.Migrations
                     AppearName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
                     Note = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SexId = table.Column<int>(type: "int", nullable: false)
+                    GenderId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -102,9 +102,9 @@ namespace Laboratory.DAL.Migrations
                         principalTable: "Categories",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_Tests_Sex_SexId",
-                        column: x => x.SexId,
-                        principalTable: "Sex",
+                        name: "FK_Tests_Gender_GenderId",
+                        column: x => x.GenderId,
+                        principalTable: "Gender",
                         principalColumn: "Id");
                 });
 
@@ -125,15 +125,15 @@ namespace Laboratory.DAL.Migrations
                     RoomNr = table.Column<int>(type: "int", maxLength: 13, nullable: false),
                     PhoneNr = table.Column<int>(type: "int", nullable: false),
                     Diagnosis = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SexId = table.Column<int>(type: "int", nullable: false)
+                    GenderId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Patients", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Patients_Sex_SexId",
-                        column: x => x.SexId,
-                        principalTable: "Sex",
+                        name: "FK_Patients_Gender_GenderId",
+                        column: x => x.GenderId,
+                        principalTable: "Gender",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Patients_Title_TitleId",
@@ -154,15 +154,15 @@ namespace Laboratory.DAL.Migrations
                     LowFrom = table.Column<int>(type: "int", maxLength: 10, nullable: false),
                     HighFrom = table.Column<int>(type: "int", maxLength: 10, nullable: false),
                     TestId = table.Column<int>(type: "int", nullable: false),
-                    SexId = table.Column<int>(type: "int", nullable: false)
+                    GenderId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TestRanges", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TestRanges_Sex_SexId",
-                        column: x => x.SexId,
-                        principalTable: "Sex",
+                        name: "FK_TestRanges_Gender_GenderId",
+                        column: x => x.GenderId,
+                        principalTable: "Gender",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_TestRanges_Tests_TestId",
@@ -215,7 +215,7 @@ namespace Laboratory.DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
-                table: "Sex",
+                table: "Gender",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
@@ -243,9 +243,9 @@ namespace Laboratory.DAL.Migrations
                 column: "TestId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Patients_SexId",
+                name: "IX_Patients_GenderId",
                 table: "Patients",
-                column: "SexId");
+                column: "GenderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Patients_TitleId",
@@ -253,9 +253,9 @@ namespace Laboratory.DAL.Migrations
                 column: "TitleId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_TestRanges_SexId",
+                name: "IX_TestRanges_GenderId",
                 table: "TestRanges",
-                column: "SexId");
+                column: "GenderId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_TestRanges_TestId",
@@ -268,9 +268,9 @@ namespace Laboratory.DAL.Migrations
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Tests_SexId",
+                name: "IX_Tests_GenderId",
                 table: "Tests",
-                column: "SexId");
+                column: "GenderId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -300,7 +300,7 @@ namespace Laboratory.DAL.Migrations
                 name: "Categories");
 
             migrationBuilder.DropTable(
-                name: "Sex");
+                name: "Gender");
         }
     }
 }

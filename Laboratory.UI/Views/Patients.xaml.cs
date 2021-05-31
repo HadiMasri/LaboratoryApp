@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Laboratory.Shared.ViewModels;
+using Laboratory.UI.HttpHelper;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +23,22 @@ namespace Laboratory.UI.Views
         public Patients()
         {
             InitializeComponent();
+            GetGenders();
+            GetTitles();
+        }
+        private void GetGenders()
+        {
+            List<GenderViewModel> genders = GenderHelper.GetGendersAsync().Result;
+            comboGender.ItemsSource = genders;
+        }
+        private void GetTitles()
+        {
+            List<TitleViewModel> titles = TitleHelper.GetTitlesAsync().Result;
+            comboTitle.ItemsSource = titles;
+        }
+        private void Add_Patient(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

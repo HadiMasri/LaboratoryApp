@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Laboratory.DAL.Migrations
 {
     [DbContext(typeof(LaboratoryDbContext))]
-    [Migration("20210530000840_InitialEntity")]
-    partial class InitialEntity
+    [Migration("20210531143310_initialentities")]
+    partial class initialentities
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -128,6 +128,33 @@ namespace Laboratory.DAL.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Laboratory.DAL.Entities.Gender", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Gender");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Male"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Female"
+                        });
+                });
+
             modelBuilder.Entity("Laboratory.DAL.Entities.Labo", b =>
                 {
                     b.Property<int>("Id")
@@ -178,6 +205,9 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("GenderId")
+                        .HasColumnType("int");
+
                     b.Property<string>("LastName")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -200,15 +230,12 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(13)
                         .HasColumnType("int");
 
-                    b.Property<int>("SexId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TitleId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SexId");
+                    b.HasIndex("GenderId");
 
                     b.HasIndex("TitleId");
 
@@ -237,33 +264,6 @@ namespace Laboratory.DAL.Migrations
                     b.ToTable("patient_Tests");
                 });
 
-            modelBuilder.Entity("Laboratory.DAL.Entities.Sex", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Sex");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Male"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Female"
-                        });
-                });
-
             modelBuilder.Entity("Laboratory.DAL.Entities.Test", b =>
                 {
                     b.Property<int>("Id")
@@ -284,6 +284,9 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
+                    b.Property<int>("GenderId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -296,14 +299,11 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(4)
                         .HasColumnType("float");
 
-                    b.Property<int>("SexId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
 
-                    b.HasIndex("SexId");
+                    b.HasIndex("GenderId");
 
                     b.ToTable("Tests");
                 });
@@ -319,6 +319,9 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(4)
                         .HasColumnType("int");
 
+                    b.Property<int>("GenderId")
+                        .HasColumnType("int");
+
                     b.Property<int>("HighFrom")
                         .HasMaxLength(10)
                         .HasColumnType("int");
@@ -331,9 +334,6 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("int");
 
-                    b.Property<int>("SexId")
-                        .HasColumnType("int");
-
                     b.Property<int>("TestId")
                         .HasColumnType("int");
 
@@ -343,7 +343,7 @@ namespace Laboratory.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("SexId");
+                    b.HasIndex("GenderId");
 
                     b.HasIndex("TestId");
 
@@ -379,9 +379,9 @@ namespace Laboratory.DAL.Migrations
 
             modelBuilder.Entity("Laboratory.DAL.Entities.Patient", b =>
                 {
-                    b.HasOne("Laboratory.DAL.Entities.Sex", "Sex")
+                    b.HasOne("Laboratory.DAL.Entities.Gender", "Gender")
                         .WithMany()
-                        .HasForeignKey("SexId")
+                        .HasForeignKey("GenderId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -391,7 +391,7 @@ namespace Laboratory.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Sex");
+                    b.Navigation("Gender");
 
                     b.Navigation("Title");
                 });
@@ -423,22 +423,22 @@ namespace Laboratory.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("Laboratory.DAL.Entities.Sex", "Sex")
+                    b.HasOne("Laboratory.DAL.Entities.Gender", "Gender")
                         .WithMany()
-                        .HasForeignKey("SexId")
+                        .HasForeignKey("GenderId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
                     b.Navigation("Category");
 
-                    b.Navigation("Sex");
+                    b.Navigation("Gender");
                 });
 
             modelBuilder.Entity("Laboratory.DAL.Entities.TestRange", b =>
                 {
-                    b.HasOne("Laboratory.DAL.Entities.Sex", "Sex")
+                    b.HasOne("Laboratory.DAL.Entities.Gender", "Gender")
                         .WithMany()
-                        .HasForeignKey("SexId")
+                        .HasForeignKey("GenderId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
@@ -448,7 +448,7 @@ namespace Laboratory.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.Navigation("Sex");
+                    b.Navigation("Gender");
 
                     b.Navigation("Test");
                 });

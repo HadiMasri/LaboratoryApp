@@ -1,7 +1,7 @@
 ﻿
 namespace Laboratory.DAL.Entities
 {
-    public class Sex
+    public class Gender
     {
         public int Id { get; set; }
         public string Name { get; set; }

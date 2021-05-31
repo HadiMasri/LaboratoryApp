@@ -11,7 +11,7 @@ namespace Laboratory.DAL
         public LaboratoryDbContext(DbContextOptions<LaboratoryDbContext> options) : base(options)
         { }
         public DbSet<Adress> Adress { get; set; }
-        public DbSet<Sex> Sex { get; set; }
+        public DbSet<Gender> Gender { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Labo> Labos { get; set; }
         public DbSet<Patient> Patients { get; set; }

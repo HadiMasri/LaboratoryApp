@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "FZ4lumSObWSd7xeuOokNdHHa8xCqGv7EtPaB6mZnXPcbEW+7cc+pnBZTOs9frp2/xYXRHG5Ux/yp4ag3sRAtDw==",
+  "dgSpecHash": "gH9OHKPO84PnU2/0zpNAdXy72QU7mZzMFcUkD0dovH3nYdbRl/CUc85DVobMgOvZM7gGqfBGMKlFRNyVVU3TNg==",
   "success": true,
   "projectFilePath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hadi\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",
-    "C:\\Users\\Hadi\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512"
+    "C:\\Users\\Hadi\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512",
+    "C:\\Users\\Hadi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

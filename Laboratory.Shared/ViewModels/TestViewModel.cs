@@ -10,7 +10,7 @@
         public int CategoryId { get; set; }
         public CategoryViewModel Category { get; set; }
         public string Note { get; set; }
-        public int SexId { get; set; }
-        public SexViewModel Sex { get; set; }
+        public int GenderId { get; set; }
+        public GenderViewModel Sex { get; set; }
     }
 }

@@ -13,7 +13,7 @@
                 <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
             </GroupBox.BitmapEffect>
         </GroupBox>
-        <ComboBox materialDesign:HintAssist.Hint="Title" Margin="-600,50,0,500" VerticalAlignment="Top" Height="43" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+        <ComboBox x:Name="comboTitle" SelectedValue="{Binding TitleId}"  DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Title" Margin="-600,50,0,500" VerticalAlignment="Top" Height="43" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel />
@@ -26,7 +26,7 @@
         <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="-200,100,0,400" materialDesign:HintAssist.Hint="Mother Name" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
         <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="-200,150,0,300" materialDesign:HintAssist.Hint="Age" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
         <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="200,50,0,500" materialDesign:HintAssist.Hint="Arrive Time" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-        <ComboBox materialDesign:HintAssist.Hint="Sex" Margin="200,100,0,400" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+        <ComboBox x:Name="comboGender" SelectedValue="{Binding TitleId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Sex" Margin="200,100,0,400" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel />
@@ -37,7 +37,7 @@
         <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,50,0,500" materialDesign:HintAssist.Hint="Room Nr" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
         <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,100,0,400" materialDesign:HintAssist.Hint="Phone Nr" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
         <TextBox  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,150,0,300" materialDesign:HintAssist.Hint="The Diagnosis" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Width="100" Background="#090D40" Margin="600,220,0,300" VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" />
+        <Button Style="{StaticResource MaterialDesignRaisedDarkButton}" Click="Add_Patient" Width="100" Background="#090D40" Margin="600,220,0,300" VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" />
 
 
 
@@ -52,6 +52,7 @@
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
                     <Setter Property="Foreground" Value="White" />
                 </Style>
             </DataGrid.Resources>
@@ -60,5 +61,42 @@
                 <DataGridTextColumn  Header="Patients" Binding="{Binding Patients}"     Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
+        <DataGrid ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="1070 80 0 0" Height="600" Width="200" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
+            <DataGrid.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
+            </DataGrid.BitmapEffect>
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#24426E" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Tests" Binding="{Binding Nr}" Width="*"    />
+            </DataGrid.Columns>
+        </DataGrid>
+        <DataGrid ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="0 310 0 0" Height="200" Width="800" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
+            <DataGrid.BitmapEffect>
+                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
+            </DataGrid.BitmapEffect>
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#24426E" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Appearing Name" Binding="{Binding AppearingName}" Width="135"    />
+                <DataGridTextColumn  Header="Test Name" Binding="{Binding TestName}" Width="*"    />
+                <DataGridTextColumn  Header="Category" Binding="{Binding Category}" Width="*"    />
+                <DataGridTextColumn  Header="Range" Binding="{Binding Range}" Width="*"    />
+                <DataGridTextColumn  Header="Result" Binding="{Binding Result}" Width="*"    />
+                <DataGridTextColumn  Header="Price" Binding="{Binding Price}" Width="*"    />
+                <DataGridTextColumn  Header="Note" Binding="{Binding Note}" Width="*"    />
+            </DataGrid.Columns>
+        </DataGrid>
+        
     </Grid>
 </UserControl>

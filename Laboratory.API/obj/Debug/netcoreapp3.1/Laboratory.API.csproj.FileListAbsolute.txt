@@ -64,3 +64,7 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\obj\Debug\netcorea
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.DAL.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.DAL.pdb
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.BLL.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.Domain.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.BLL.pdb
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.API\bin\Debug\netcoreapp3.1\Laboratory.Domain.pdb

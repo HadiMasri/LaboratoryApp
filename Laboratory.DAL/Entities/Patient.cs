@@ -18,7 +18,7 @@ namespace Laboratory.DAL.Entities
         public int RoomNr { get; set; }
         public int PhoneNr { get; set; }
         public string Diagnosis { get; set; }
-        public int SexId { get; set; }
-        public Sex Sex { get; set; }
+        public int GenderId { get; set; }
+        public Gender Gender { get; set; }
     }
 }

@@ -16,6 +16,11 @@
 
   <ItemGroup>
     <PackageReference Include="MaterialDesignThemes" Version="4.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Laboratory.Shared\Laboratory.Shared.csproj" />
   </ItemGroup>
 
   <ItemGroup>

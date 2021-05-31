@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "Laboratory.API/1.0.0": {
         "dependencies": {
+          "Laboratory.BLL": "1.0.0",
           "Laboratory.DAL": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "5.0.6",
           "Microsoft.EntityFrameworkCore.Relational": "5.0.6",
@@ -1392,6 +1393,19 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Laboratory.BLL/1.0.0": {
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Laboratory.DAL": "1.0.0",
+          "Laboratory.Domain": "1.0.0"
+        },
+        "runtime": {
+          "Laboratory.BLL.dll": {}
+        },
+        "compile": {
+          "Laboratory.BLL.dll": {}
+        }
+      },
       "Laboratory.DAL/1.0.0": {
         "dependencies": {
           "AutoMapper": "10.1.1",
@@ -1404,6 +1418,14 @@
         },
         "compile": {
           "Laboratory.DAL.dll": {}
+        }
+      },
+      "Laboratory.Domain/1.0.0": {
+        "runtime": {
+          "Laboratory.Domain.dll": {}
+        },
+        "compile": {
+          "Laboratory.Domain.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -3713,7 +3735,17 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "Laboratory.BLL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Laboratory.DAL/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Laboratory.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

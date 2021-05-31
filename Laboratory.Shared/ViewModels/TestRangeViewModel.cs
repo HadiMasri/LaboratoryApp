@@ -10,7 +10,7 @@
         public int HighFrom { get; set; }
         public int TestId { get; set; }
         public TestViewModel Test { get; set; }
-        public int SexId { get; set; }
-        public SexViewModel Sex { get; set; }
+        public int GenderId { get; set; }
+        public GenderViewModel Gender { get; set; }
     }
 }

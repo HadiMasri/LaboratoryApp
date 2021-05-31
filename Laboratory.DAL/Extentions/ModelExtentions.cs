@@ -20,13 +20,13 @@ namespace Laboratory.DAL.Extentions
                     Name = "Mrs"
                 }
             );
-            modelBuilder.Entity<Sex>().HasData(
-                new Sex
+            modelBuilder.Entity<Gender>().HasData(
+                new Gender
                 {
                     Id = 1,
                     Name = "Male"
                 },
-                new Sex
+                new Gender
                 {
                     Id = 2,
                     Name = "Female"

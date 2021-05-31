@@ -1515,6 +1515,21 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Laboratory.BLL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "AutoMapper": "10.1.1",
+          "Laboratory.DAL": "1.0.0",
+          "Laboratory.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Laboratory.BLL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Laboratory.BLL.dll": {}
+        }
+      },
       "Laboratory.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -1529,6 +1544,16 @@
         },
         "runtime": {
           "bin/placeholder/Laboratory.DAL.dll": {}
+        }
+      },
+      "Laboratory.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Laboratory.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Laboratory.Domain.dll": {}
         }
       }
     }
@@ -5809,14 +5834,25 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Laboratory.BLL/1.0.0": {
+      "type": "project",
+      "path": "../Laboratory.BLL/Laboratory.BLL.csproj",
+      "msbuildProject": "../Laboratory.BLL/Laboratory.BLL.csproj"
+    },
     "Laboratory.DAL/1.0.0": {
       "type": "project",
       "path": "../Laboratory.DAL/Laboratory.DAL.csproj",
       "msbuildProject": "../Laboratory.DAL/Laboratory.DAL.csproj"
+    },
+    "Laboratory.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Laboratory.Domain/Laboratory.Domain.csproj",
+      "msbuildProject": "../Laboratory.Domain/Laboratory.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Laboratory.BLL >= 1.0.0",
       "Laboratory.DAL >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 5.0.6",
       "Microsoft.EntityFrameworkCore.Relational >= 5.0.6",
@@ -5850,6 +5886,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
+            "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj": {
+              "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj"
+            },
             "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
               "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj"
             }
