@@ -22,8 +22,15 @@ namespace Laboratory.DAL.Repositories
         }
         public void Add(TEntity t)
         {
-            var entity = _mapper.Map<TEntity>(t);
-            dbSet.Add(entity);
+            try
+            {
+                var entity = _mapper.Map<TEntity>(t);
+                dbSet.Add(entity);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public TEntity FindById(int Id)
@@ -33,7 +40,23 @@ namespace Laboratory.DAL.Repositories
 
         public List<TEntity> GetAll(Expression<Func<TEntity, object>> include1 = null, Expression<Func<TEntity, object>> include2 = null)
         {
-            return _dbContext.Set<TEntity>().ToList();
+            try
+            {
+                if (include1 != null && include2 != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).Include(include2).ToList();
+                }
+                else
+                {
+                    return _dbContext.Set<TEntity>().ToList();
+                }
+    
+              
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public void Remove(int id)

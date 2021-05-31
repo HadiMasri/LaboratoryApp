@@ -28,6 +28,15 @@ namespace Laboratory.DAL.Configurations
             builder.Property(t => t.RoomNr)
                 .IsRequired()
                 .HasMaxLength(13);
+            builder.Property(t => t.ArriveTime)
+                .IsRequired()
+                .HasMaxLength(10);
+            builder.Property(t => t.DoctorName)
+                .HasMaxLength(50);
+            builder.Property(t => t.Diagnosis)
+               .HasMaxLength(50);
+            builder.Property(t => t.PhoneNr)
+               .HasMaxLength(13);
         }
     }
 }

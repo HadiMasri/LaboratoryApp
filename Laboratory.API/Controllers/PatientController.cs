@@ -19,7 +19,21 @@ namespace Laboratory.API.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [HttpPost]
+        [HttpGet]
+        public IEnumerable<Patient> GetAll()
+        {
+            try
+            {
+                var allObj = _unitOfWork.Patient.GetAll(m => m.Gender, t => t.Title);
+                return allObj.ToList();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+            [HttpPost]
         public IActionResult Upsert(Patient patient)
         {
             try

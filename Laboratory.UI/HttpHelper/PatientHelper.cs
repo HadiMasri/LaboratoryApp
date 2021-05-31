@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,6 +23,22 @@ namespace Laboratory.UI.HttpHelper
                 httpResponseMessage.StatusCode.ToString();
             }
             return "success";
+        }
+
+        public static async Task<List<PatientViewModel>> GetPatientsAsync()
+        {
+            String Url = "https://localhost:44333/";
+            var result = new List<PatientViewModel>();
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.GetAsync("Patient").Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseBody = await response.Content.ReadAsStringAsync();
+                result = JsonConvert.DeserializeObject<List<PatientViewModel>>(responseBody);
+            }
+            return result;
         }
     }
 }
