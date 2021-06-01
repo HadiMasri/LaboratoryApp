@@ -56,7 +56,7 @@ namespace Laboratory.UI.Views
             patient.RoomNr = txtRoomNr.Text;
             patient.PhoneNr = txtPhoneNr.Text;
             patient.Diagnosis = txtDiagnosis.Text;
-            await PatientHelper.AddPatientAsync(patient);
+            await PatientHelper.AddOrUpdatePatientAsync(patient);
             GetPatientsAsync();
             ClearInput();
         }
@@ -88,6 +88,7 @@ namespace Laboratory.UI.Views
                 {
                     Id = item.Id,
                     Title = item.Title,
+                    Name = item.Name,
                     FullName = $"{item.Name} {item.LastName}",
                     LastName = item.LastName,
                     FatherName = item.FatherName,
@@ -95,6 +96,7 @@ namespace Laboratory.UI.Views
                     Age = item.Age,
                     ArriveTime = item.ArriveTime,
                     GenderId = item.GenderId,
+                    Gender = item.Gender,
                     DoctorName = item.DoctorName,
                     RoomNr = item.RoomNr,
                     PhoneNr = item.PhoneNr,
@@ -114,6 +116,49 @@ namespace Laboratory.UI.Views
             var patient = (PatientViewModel)patientsGrid.SelectedItem;
             PatientHelper.DeletePatientAsync(patient.Id);
             GetPatientsAsync();
+        }
+
+        private async void Update_Patient(object sender, RoutedEventArgs e)
+        {
+            var title = (TitleViewModel)comboTitle.SelectedItem;
+            var gender = (GenderViewModel)comboGender.SelectedItem;
+            var patient = (PatientViewModel)patientsGrid.SelectedItem;
+
+            patient.TitleId = title.Id;
+            patient.Name = txtName.Text;
+            patient.LastName = txtLastName.Text;
+            patient.FatherName = txtFatherName.Text;
+            patient.MotherName = txtMotherName.Text;
+            patient.Age = Convert.ToInt32(txtAge.Text);
+            patient.ArriveTime = arriveTime.Text;
+            patient.GenderId = gender.Id;
+            patient.DoctorName = txtDoctorName.Text;
+            patient.RoomNr = txtRoomNr.Text;
+            patient.PhoneNr = txtPhoneNr.Text;
+            patient.Diagnosis = txtDiagnosis.Text;
+            await PatientHelper.AddOrUpdatePatientAsync(patient);
+            GetPatientsAsync();
+        }
+
+        private void patientsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var patient = (PatientViewModel)patientsGrid.SelectedItem;
+            if (patient!= null)
+            {
+                comboTitle.Text = patient.Title.Name;
+                txtName.Text = patient.Name;
+                txtLastName.Text = patient.LastName;
+                txtFatherName.Text = patient.FatherName;
+                txtMotherName.Text = patient.MotherName;
+                txtAge.Text = patient.Age.ToString();
+                arriveTime.Text = patient.ArriveTime;
+                comboGender.Text = patient.Gender.Name;
+                txtDoctorName.Text = patient.DoctorName;
+                txtRoomNr.Text = patient.RoomNr;
+                txtPhoneNr.Text = patient.PhoneNr;
+                txtDiagnosis.Text = patient.Diagnosis;
+            }
+ 
         }
     }
 }

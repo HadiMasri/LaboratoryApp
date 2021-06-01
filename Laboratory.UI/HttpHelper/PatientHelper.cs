@@ -11,7 +11,7 @@ namespace Laboratory.UI.HttpHelper
 {
     public class PatientHelper
     {
-        public static async Task<string> AddPatientAsync(PatientViewModel patientVM)
+        public static async Task<string> AddOrUpdatePatientAsync(PatientViewModel patientVM)
         {
             HttpClient  httpClient = new HttpClient();
             Uri uri = new Uri("https://localhost:44333/Patient");
