@@ -65,7 +65,6 @@ namespace Laboratory.UI.Views
         {
             comboTitle.SelectedIndex = -1;
             comboGender.SelectedIndex = -1;
-
             txtName.Clear();
             txtLastName.Clear();
             txtFatherName.Clear();
@@ -88,10 +87,33 @@ namespace Laboratory.UI.Views
                 patientsGrid.Items.Add(new PatientViewModel
                 {
                     Id = item.Id,
-                    Name = $"{item.Name} {item.LastName}"
+                    Title = item.Title,
+                    FullName = $"{item.Name} {item.LastName}",
+                    LastName = item.LastName,
+                    FatherName = item.FatherName,
+                    MotherName = item.MotherName,
+                    Age = item.Age,
+                    ArriveTime = item.ArriveTime,
+                    GenderId = item.GenderId,
+                    DoctorName = item.DoctorName,
+                    RoomNr = item.RoomNr,
+                    PhoneNr = item.PhoneNr,
+                    Diagnosis = item.Diagnosis
                 });
             }
 
+        }
+
+        private void New_Patient(object sender, RoutedEventArgs e)
+        {
+            ClearInput();
+        }
+
+        private  void Delete_Patient(object sender, RoutedEventArgs e)
+        {
+            var patient = (PatientViewModel)patientsGrid.SelectedItem;
+            PatientHelper.DeletePatientAsync(patient.Id);
+            GetPatientsAsync();
         }
     }
 }

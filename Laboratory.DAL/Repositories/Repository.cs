@@ -61,7 +61,8 @@ namespace Laboratory.DAL.Repositories
 
         public void Remove(int id)
         {
-            throw new NotImplementedException();
+            var entity = dbSet.Find(id);
+            dbSet.Remove(entity);
         }
     }
 }

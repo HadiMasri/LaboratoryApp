@@ -40,5 +40,14 @@ namespace Laboratory.UI.HttpHelper
             }
             return result;
         }
+
+        public static void DeletePatientAsync(int patientId)
+        {
+            String Url = "https://localhost:44333/";
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.DeleteAsync("Patient?id=" + patientId).Result;
+        }
     }
 }

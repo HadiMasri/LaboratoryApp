@@ -33,7 +33,7 @@ namespace Laboratory.API.Controllers
             }
         }
 
-            [HttpPost]
+        [HttpPost]
         public IActionResult Upsert(Patient patient)
         {
             try
@@ -48,6 +48,22 @@ namespace Laboratory.API.Controllers
                 }
                 _unitOfWork.Save();
                 return Json(new { success = true, message = "Patient Added Successful" });
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                if (id == 0) return BadRequest();
+                _unitOfWork.Patient.Remove(id);
+                _unitOfWork.Save();
+                return Json(new { success = true, message = " Deleted Successfully" });
             }
             catch (Exception)
             {
