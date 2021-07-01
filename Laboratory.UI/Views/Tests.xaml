@@ -1,0 +1,211 @@
+﻿<UserControl x:Class="Laboratory.UI.Views.Tests"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Laboratory.UI.Views"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1500">
+    <Grid x:Name="grdTest">
+        <GroupBox x:Name="patientGroupBox"  materialDesign:ColorZoneAssist.Mode="Custom" Background="#fcfcfc" materialDesign:ColorZoneAssist.Background="#24426E" materialDesign:ColorZoneAssist.Foreground="White"  Header="New Test" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,20,0,0" Height="250" Width="1200" >
+        </GroupBox>
+        <TextBox x:Name="txtCode" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,50,800,0" materialDesign:HintAssist.Hint="Code:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox x:Name="txtAppearingName"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="0,100,800,300" materialDesign:HintAssist.Hint="Appearing Name:" TextWrapping="Wrap" VerticalAlignment="Top"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox x:Name="txtTestName"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="0,50,450,300" materialDesign:HintAssist.Hint="Test Name:" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <ComboBox x:Name="comboCategory" SelectedValue="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Category" Margin="0,100,450,500" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
+        <TextBox x:Name="txtPrice"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="0,50,100,400" materialDesign:HintAssist.Hint="Price:" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+        <TextBox x:Name="txtNote" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Height="100" Width="400" AcceptsReturn="True"
+        TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="550,50,0,0" materialDesign:HintAssist.Hint="Notes:" />
+
+
+        <Button x:Name="addTest" Click="add_Test"  Width="100" Background="#090D40" Margin="800,200,0,300" VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=comboCategory}" Value="0">
+                            <Setter Property="IsEnabled" Value="False" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=txtCode, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=txtAppearingName, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=txtTestName, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Text.Length, ElementName=txtPrice, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                            <Setter Property="IsEnabled" Value="False"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addTest"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#090D40" Storyboard.TargetName="addTest"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+
+        
+
+        <DataGrid x:Name="testsGrid" SelectionChanged="testsGrid_SelectionChanged"  VerticalAlignment="Top" Margin="0 330 0 0" IsReadOnly="True" Height="600" Width="1200" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#24426E" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="BorderThickness" Value="0" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Code" Binding="{Binding Code}" Width="135"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Appearing Name" Binding="{Binding AppearName}" Width="135"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Test Name" Binding="{Binding Name}" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Category" Binding="{Binding CategoryName}" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Price" Binding="{Binding Price}" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Note" Binding="{Binding Note}" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="addRange"   Foreground="White" Content="Range"  BorderThickness="0" Width="60" Height="30"  Padding="0" >
+                                <Button.Template>
+                                    <ControlTemplate TargetType="Button">
+                                        <Border x:Name="test" CornerRadius="5" BorderThickness="0" Background="#666563">
+                                            <ContentPresenter  VerticalAlignment="Center" HorizontalAlignment="Center" />
+
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <EventTrigger RoutedEvent="MouseEnter">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation To="#262624" Duration="0:0:0.3" Storyboard.TargetName="test"  Storyboard.TargetProperty="Background.Color" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                            <EventTrigger RoutedEvent="MouseLeave">
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation To="#666563" Storyboard.TargetName="test"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="deletBtn" Click="Confirm_Click" Background="Transparent" Foreground="#f01a50" BorderThickness="0" Width="90" Height="30"  Padding="0" >
+                                <materialDesign:PackIcon x:Name="deletIcon" Kind="DeleteEmpty" Width="60" Height="30"  />
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#1f080e" Duration="0:0:0.3" Storyboard.TargetName="deletBtn"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#f01a50" Storyboard.TargetName="deletBtn"  Duration="0:0:0.3"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation  Storyboard.TargetName="deletIcon"  Duration="0:0:0.3"  Storyboard.TargetProperty="Width" To="65" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation  Storyboard.TargetName="deletIcon"  Duration="0:0:0.3"  Storyboard.TargetProperty="Height" To="35" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation  Storyboard.TargetName="deletIcon"  Duration="0:0:0.3"  Storyboard.TargetProperty="Width" To="60" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <DoubleAnimation  Storyboard.TargetName="deletIcon"  Duration="0:0:0.3"  Storyboard.TargetProperty="Height" To="30" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

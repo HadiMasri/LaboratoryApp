@@ -9,6 +9,7 @@
       "Laboratory.UI/1.0.0": {
         "dependencies": {
           "Laboratory.Shared": "1.0.0",
+          "Laboratory.Utility": "1.0.0",
           "MaterialDesignThemes": "4.1.0",
           "Newtonsoft.Json": "13.0.1"
         },
@@ -47,6 +48,11 @@
         "runtime": {
           "Laboratory.Shared.dll": {}
         }
+      },
+      "Laboratory.Utility/1.0.0": {
+        "runtime": {
+          "Laboratory.Utility.dll": {}
+        }
       }
     }
   },
@@ -78,6 +84,11 @@
       "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "Laboratory.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Laboratory.Utility/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

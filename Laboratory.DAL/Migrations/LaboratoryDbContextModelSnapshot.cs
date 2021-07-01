@@ -287,9 +287,6 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
-                    b.Property<int>("GenderId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -305,8 +302,6 @@ namespace Laboratory.DAL.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("GenderId");
 
                     b.ToTable("Tests");
                 });
@@ -426,15 +421,7 @@ namespace Laboratory.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
-                    b.HasOne("Laboratory.DAL.Entities.Gender", "Gender")
-                        .WithMany()
-                        .HasForeignKey("GenderId")
-                        .OnDelete(DeleteBehavior.NoAction)
-                        .IsRequired();
-
                     b.Navigation("Category");
-
-                    b.Navigation("Gender");
                 });
 
             modelBuilder.Entity("Laboratory.DAL.Entities.TestRange", b =>

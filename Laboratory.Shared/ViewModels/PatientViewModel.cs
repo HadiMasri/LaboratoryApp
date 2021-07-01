@@ -5,6 +5,7 @@ namespace Laboratory.Shared.ViewModels
     public class PatientViewModel
     {
         public int Id { get; set; }
+        public int Nr { get; set; }
         public int TitleId { get; set; }
         public TitleViewModel Title { get; set; }
         public string Name { get; set; }

@@ -44,6 +44,16 @@
         "runtime": {
           "bin/placeholder/Laboratory.Shared.dll": {}
         }
+      },
+      "Laboratory.Utility/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Laboratory.Utility.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Laboratory.Utility.dll": {}
+        }
       }
     }
   },
@@ -134,11 +144,17 @@
       "type": "project",
       "path": "../Laboratory.Shared/Laboratory.Shared.csproj",
       "msbuildProject": "../Laboratory.Shared/Laboratory.Shared.csproj"
+    },
+    "Laboratory.Utility/1.0.0": {
+      "type": "project",
+      "path": "../Laboratory.Utility/Laboratory.Utility.csproj",
+      "msbuildProject": "../Laboratory.Utility/Laboratory.Utility.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Laboratory.Shared >= 1.0.0",
+      "Laboratory.Utility >= 1.0.0",
       "MaterialDesignThemes >= 4.1.0",
       "Newtonsoft.Json >= 13.0.1"
     ]
@@ -172,6 +188,9 @@
           "projectReferences": {
             "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj": {
               "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj"
+            },
+            "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj": {
+              "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj"
             }
           }
         }

@@ -10,7 +10,6 @@
         public int CategoryId { get; set; }
         public CategoryDto Category { get; set; }
         public string Note { get; set; }
-        public int SexId { get; set; }
-        public SexDto Sex { get; set; }
+
     }
 }

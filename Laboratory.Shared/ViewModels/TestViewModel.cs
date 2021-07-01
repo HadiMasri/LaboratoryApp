@@ -8,9 +8,8 @@
         public double Price { get; set; }
         public string AppearName { get; set; }
         public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
         public CategoryViewModel Category { get; set; }
         public string Note { get; set; }
-        public int GenderId { get; set; }
-        public GenderViewModel Sex { get; set; }
     }
 }

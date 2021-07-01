@@ -7,13 +7,20 @@
              xmlns:local="clr-namespace:Laboratory.UI.Views"
              mc:Ignorable="d" 
              d:DesignHeight="800" d:DesignWidth="1500" >
-    <Grid Background="White" RenderTransformOrigin="0.5,0.52"  >
-        <GroupBox  materialDesign:ColorZoneAssist.Mode="Custom" Background="#fcfcfc" materialDesign:ColorZoneAssist.Background="#24426E" materialDesign:ColorZoneAssist.Foreground="White"  Header="New Patient" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,20,0,0" Height="250" Width="758" >
-            <GroupBox.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
-            </GroupBox.BitmapEffect>
+    <UserControl.Resources>
+        <ImageBrush x:Key="tb_mouse_over"
+                    ImageSource="../Assets/tgBtn_default.png"/>
+        <ImageBrush x:Key="tb_mouse_click"
+                    ImageSource="../Assets/closeMenu.png"/>
+        
+        
+    </UserControl.Resources>
+    <Grid     RenderTransformOrigin="0.5,0.52"  >
+
+        <Grid  x:Name="mainGrid" />
+        <GroupBox x:Name="patientGroupBox"  materialDesign:ColorZoneAssist.Mode="Custom" Background="#fcfcfc" materialDesign:ColorZoneAssist.Background="#24426E" materialDesign:ColorZoneAssist.Foreground="White"  Header="New Patient" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,20,0,0" Height="250" Width="758" >
         </GroupBox>
-        <ComboBox x:Name="comboTitle" SelectedValue="{Binding TitleId}"  DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Title" Margin="-600,50,0,500" VerticalAlignment="Top" Height="43" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBox x:Name="comboTitle" SelectedValue="{Binding TitleId}"  DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Title" Margin="-600,50,0,500" VerticalAlignment="Top" Height="43" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel />
@@ -37,7 +44,7 @@
         <TextBox x:Name="txtRoomNr" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,50,0,500" materialDesign:HintAssist.Hint="Room Nr" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
         <TextBox x:Name="txtPhoneNr" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,100,0,400" materialDesign:HintAssist.Hint="Phone Nr" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
         <TextBox x:Name="txtDiagnosis" Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="600,150,0,300" materialDesign:HintAssist.Hint="The Diagnosis" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-        <Button Click="Add_Patient" Width="100" Background="#090D40" Margin="600,220,0,300" VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" >
+        <Button x:Name="addPatient" Click="Add_Or_Update_Patient" Width="100" Background="#090D40" Margin="600,220,0,300" VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" >
             <Button.Style>
                 <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
                     <Style.Triggers>
@@ -71,6 +78,22 @@
                     </Style.Triggers>
                 </Style> 
             </Button.Style>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addPatient"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#090D40" Storyboard.TargetName="addPatient"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
 
 
@@ -78,28 +101,21 @@
 
 
 
+        <DataGrid    x:Name="patientsGrid" SelectionChanged="patientsGrid_SelectionChanged" SelectedItem="{Binding SelectedItem}" IsReadOnly="True" VerticalAlignment="Top" Margin="-1050 80 0 0"
+                  Height="600" Width="200" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
 
-        <DataGrid x:Name="patientsGrid" SelectionChanged="patientsGrid_SelectionChanged" SelectedItem="{Binding SelectedItem}" IsReadOnly="True" VerticalAlignment="Top" Margin="-1050 80 0 0"
-                  Height="600" Width="200" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
-            <DataGrid.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
-            </DataGrid.BitmapEffect>
             <DataGrid.Resources>
-                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                    <Setter Property="Background" Value="#24426E" />
-                    <Setter Property="HorizontalContentAlignment" Value="Center" />
-                    <Setter Property="Foreground" Value="White" />
+                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="Background" Value="#24426E" />
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="BorderThickness" Value="0" />
                 </Style>
-            </DataGrid.Resources>
+                
+                </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Nr" Binding="{Binding Id}"     Width="40" >
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-                            <Setter Property="Background" Value="#24426E" />
-                            <Setter Property="Foreground" Value="White" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
+                <DataGridTextColumn  Header="Nr" Binding="{Binding Nr}"     Width="50" >
+   
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />
@@ -112,20 +128,21 @@
                             <Setter Property="HorizontalAlignment" Value="Center" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
-                    <DataGridTextColumn.HeaderStyle>
-                        <Style TargetType="DataGridColumnHeader">
-                            <Setter Property="HorizontalContentAlignment" Value="Center" />
-                            <Setter Property="Background" Value="#24426E" />
-                            <Setter Property="Foreground" Value="White" />
-                        </Style>
-                    </DataGridTextColumn.HeaderStyle>
+ 
                 </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="deletBtn" Click="Confirm_Dialog" Background="Transparent" Foreground="#3d070c" BorderThickness="0" Width="20" Height="20"  Padding="0">
+                                <materialDesign:PackIcon  Kind="AccountRemoveOutline" Height="20" Width="20" />
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
+            
         </DataGrid>
-        <DataGrid ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="1070 80 0 0" Height="600" Width="200" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
-            <DataGrid.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
-            </DataGrid.BitmapEffect>
+        <DataGrid x:Name="testsGrid" ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="1070 80 0 0" Height="600" Width="200" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
@@ -134,13 +151,12 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Tests" Binding="{Binding Nr}" Width="*"    />
+                <DataGridTextColumn  Header="Code" Binding="{Binding Code}" Width="63"    />
+                <DataGridTextColumn  Header="Test" Binding="{Binding AppearName}" Width="*"    />
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="0 310 0 0" Height="200" Width="800" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
-            <DataGrid.BitmapEffect>
-                <DropShadowBitmapEffect Color="Black" Direction="-50" ShadowDepth="5" Softness=".6" />
-            </DataGrid.BitmapEffect>
+
+        <DataGrid x:Name="userTestsGrid" ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="0 310 0 0" Height="200" Width="800" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
@@ -158,32 +174,25 @@
                 <DataGridTextColumn  Header="Note" Binding="{Binding Note}" Width="*"    />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="New" Width="100" Click="New_Patient" Background="#61637A" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="-300,700,0,0" VerticalAlignment="Top"/>
-        <Button Content="Delete" Click="Delete_Patient" Width="100" Background="#C41426" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="-70,700,0,0" VerticalAlignment="Top">
-            <Button.Style>
-                <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=patientsGrid}"
-                                 Value="0">
-                            <Setter Property="IsEnabled"
-                                Value="False" />
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
+        <Button x:Name="btnNew"  Content="New" Width="100" Click="New_Patient" Background="#61637A" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="300,220,0,0" VerticalAlignment="Top" >
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#48495c" Duration="0:0:0.3" Storyboard.TargetName="btnNew"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#61637A" Storyboard.TargetName="btnNew"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
         </Button>
-        <Button Content="Update" Click="Update_Patient" Width="100" Background="#24426E" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="150,700,0,0" VerticalAlignment="Top">
-            <Button.Style>
-                <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
-                    <Style.Triggers>
-                        <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=patientsGrid}"
-                                 Value="0">
-                            <Setter Property="IsEnabled"
-                                Value="False" />
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
-        </Button>
+
     </Grid>
+
 </UserControl>

@@ -8,10 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\closeMenu.png" />
+    <None Remove="Assets\Delete.png" />
     <None Remove="Assets\Materials.png" />
     <None Remove="Assets\patient.png" />
     <None Remove="Assets\settings.png" />
     <None Remove="Assets\Test.png" />
+    <None Remove="Assets\tgBtn_default.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,13 +24,17 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Laboratory.Shared\Laboratory.Shared.csproj" />
+    <ProjectReference Include="..\Laboratory.Utility\Laboratory.Utility.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Assets\closeMenu.png" />
+    <Resource Include="Assets\Delete.png" />
     <Resource Include="Assets\Materials.png" />
     <Resource Include="Assets\settings.png" />
     <Resource Include="Assets\Test.png" />
     <Resource Include="Assets\patient.png" />
+    <Resource Include="Assets\tgBtn_default.png" />
   </ItemGroup>
 
 </Project>

@@ -8,7 +8,10 @@ namespace Laboratory.DAL.UnitOfWork
         IPatientRepository Patient { get; }
         ITitleRepository Title { get; }
         IGenderRepository Gender { get; }
+        ICategoryRepository Category { get; }
 
+        ITestRepository Test { get; }
+         
         void Save();
     }
 }

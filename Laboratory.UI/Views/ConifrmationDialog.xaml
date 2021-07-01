@@ -1,0 +1,23 @@
+﻿<Window x:Class="Laboratory.UI.Views.ConifrmationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Laboratory.UI.Views"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        MouseLeftButtonDown="Window_MouseDown"
+        WindowStartupLocation="CenterScreen"
+        Height="200" Width="400">
+    <Border CornerRadius="15" Background="White" >
+        <Grid>
+            <TextBlock Text="asdasdasdasdadadlkdvnjbkljvlbnjclhnbjdhnkjbndjikhbnhjbndf" TextWrapping="Wrap"  Name="confirmTxt" Padding="0" Margin="125,28,20,88" Foreground="Gray" FontSize="15" />
+            <Image x:Name="confirmationImg"   Height="50" RenderTransformOrigin="0.5,0.51" Width="50" Margin="35,28,315,122" />
+            <Button Click="Do_Confirm" Style="{DynamicResource MaterialDesignFlatButton}" BorderThickness="0" Width="80" Margin="279,130,41,38" Content="Yes" />
+            <Button Click="Close_Confirm_Dialog" Style="{DynamicResource MaterialDesignFlatButton}" Width="80" BorderThickness="0" Margin="185,130,135,38" Content="No" />
+        </Grid>
+    </Border>
+</Window>

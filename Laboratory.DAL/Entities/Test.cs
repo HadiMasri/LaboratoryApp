@@ -12,7 +12,5 @@ namespace Laboratory.DAL.Entities
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public string Note { get; set; }
-        public int GenderId { get; set; }
-        public Gender Gender { get; set; }
     }
 }

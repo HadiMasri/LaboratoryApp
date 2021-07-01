@@ -46,6 +46,10 @@ namespace Laboratory.DAL.Repositories
                 {
                     return _dbContext.Set<TEntity>().Include(include1).Include(include2).ToList();
                 }
+                else if (include1 != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).ToList();
+                }
                 else
                 {
                     return _dbContext.Set<TEntity>().ToList();

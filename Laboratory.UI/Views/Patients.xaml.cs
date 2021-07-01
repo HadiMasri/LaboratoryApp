@@ -1,5 +1,6 @@
 ﻿using Laboratory.Shared.ViewModels;
 using Laboratory.UI.HttpHelper;
+using Laboratory.Utility;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,13 +22,16 @@ namespace Laboratory.UI.Views
     /// </summary>
     public partial class Patients : UserControl
     {
+        int nr = 1;
         public Patients()
         {
             InitializeComponent();
             GetGenders();
             GetTitles();
             GetPatientsAsync();
+            GetTestsAsync();
         }
+
         private void GetGenders()
         {
             List<GenderViewModel> genders = GenderHelper.GetGendersAsync().Result;
@@ -38,7 +42,19 @@ namespace Laboratory.UI.Views
             List<TitleViewModel> titles = TitleHelper.GetTitlesAsync().Result;
             comboTitle.ItemsSource = titles;
         }
-        private async void Add_Patient(object sender, RoutedEventArgs e)
+        private async void Add_Or_Update_Patient(object sender, RoutedEventArgs e)
+        {
+            if ((string)addPatient.Content == "Add")
+            {
+                await AddPatient();
+            }
+            else if ((string)addPatient.Content == "Update")
+            {
+                await Update_Patient();
+            }
+        }
+
+        private async Task AddPatient()
         {
             var title = (TitleViewModel)comboTitle.SelectedItem;
             var gender = (GenderViewModel)comboGender.SelectedItem;
@@ -87,6 +103,7 @@ namespace Laboratory.UI.Views
                 patientsGrid.Items.Add(new PatientViewModel
                 {
                     Id = item.Id,
+                    Nr = nr++,
                     Title = item.Title,
                     Name = item.Name,
                     FullName = $"{item.Name} {item.LastName}",
@@ -103,22 +120,47 @@ namespace Laboratory.UI.Views
                     Diagnosis = item.Diagnosis
                 });
             }
+            nr = 1;
+        }
 
+        public void GetTestsAsync()
+        {
+            Task<List<TestViewModel>> testsTask = TestHelper.GetTestsAsync();
+            List<TestViewModel> tests = testsTask.Result;
+            testsGrid.Items.Clear();
+            foreach (var item in tests)
+            {
+                testsGrid.Items.Add(new TestViewModel
+                {
+                    Id = item.Id,
+                    Code = item.Code,
+                    AppearName = item.AppearName,
+                });
+            }
         }
 
         private void New_Patient(object sender, RoutedEventArgs e)
         {
+            addPatient.Content = "Add";
             ClearInput();
         }
 
-        private  void Delete_Patient(object sender, RoutedEventArgs e)
+        private  void Confirm_Dialog(object sender, RoutedEventArgs e)
         {
             var patient = (PatientViewModel)patientsGrid.SelectedItem;
-            PatientHelper.DeletePatientAsync(patient.Id);
-            GetPatientsAsync();
+            var confirmDialog = new ConifrmationDialog(SD.Patient_Delete_Confirmation, patient.Id, this,null, "patient.png");
+            confirmDialog.ShowDialog();
         }
 
-        private async void Update_Patient(object sender, RoutedEventArgs e)
+        public void Delete_Patient(int Id)
+        {
+            PatientHelper.DeletePatientAsync(Id);
+            GetPatientsAsync();
+            ClearInput();
+        }
+
+
+        private async Task Update_Patient()
         {
             var title = (TitleViewModel)comboTitle.SelectedItem;
             var gender = (GenderViewModel)comboGender.SelectedItem;
@@ -138,13 +180,17 @@ namespace Laboratory.UI.Views
             patient.Diagnosis = txtDiagnosis.Text;
             await PatientHelper.AddOrUpdatePatientAsync(patient);
             GetPatientsAsync();
+            ClearInput();
+            addPatient.Content = "Add";
         }
 
         private void patientsGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            addPatient.Content = "Update";
             var patient = (PatientViewModel)patientsGrid.SelectedItem;
             if (patient!= null)
             {
+                
                 comboTitle.Text = patient.Title.Name;
                 txtName.Text = patient.Name;
                 txtLastName.Text = patient.LastName;
@@ -160,5 +206,6 @@ namespace Laboratory.UI.Views
             }
  
         }
+
     }
 }

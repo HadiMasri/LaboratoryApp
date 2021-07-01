@@ -26,3 +26,11 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreap
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Laboratory.Shared.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Laboratory.Shared.pdb
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\MainMenu.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\MainMenu.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\ConifrmationDialog.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\ConifrmationDialog.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Laboratory.Utility.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Laboratory.Utility.pdb
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Tests.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Tests.baml
