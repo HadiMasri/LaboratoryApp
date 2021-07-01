@@ -190,7 +190,6 @@ namespace Laboratory.UI.Views
             var patient = (PatientViewModel)patientsGrid.SelectedItem;
             if (patient!= null)
             {
-                
                 comboTitle.Text = patient.Title.Name;
                 txtName.Text = patient.Name;
                 txtLastName.Text = patient.LastName;

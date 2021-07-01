@@ -17,6 +17,7 @@ namespace Laboratory.DAL.UnitOfWork
             Gender = new GenderRepository(_dbContext, _mapper);
             Test = new TestRepository(_dbContext, _mapper);
             Category = new CategoryRepository(_dbContext, _mapper);
+            TestRange = new TestRangeRepository(_dbContext, _mapper);
 
         }
         public void Dispose()
@@ -28,6 +29,7 @@ namespace Laboratory.DAL.UnitOfWork
         public IGenderRepository Gender { get; private set; }
         public ITestRepository Test { get; private set; }
         public ICategoryRepository Category { get; private set; }
+        public ITestRangeRepository TestRange { get; private set; }
 
 
         public void Save()

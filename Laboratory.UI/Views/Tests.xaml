@@ -64,7 +64,24 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-
+        <Button x:Name="btnNew"  Content="New" Width="100" Click="btn_New_Test" Background="#61637A" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="500,200,0,0" VerticalAlignment="Top" >
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#48495c" Duration="0:0:0.3" Storyboard.TargetName="btnNew"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation To="#61637A" Storyboard.TargetName="btnNew"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
         
 
         <DataGrid x:Name="testsGrid" SelectionChanged="testsGrid_SelectionChanged"  VerticalAlignment="Top" Margin="0 330 0 0" IsReadOnly="True" Height="600" Width="1200" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
@@ -122,10 +139,10 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button x:Name="addRange"   Foreground="White" Content="Range"  BorderThickness="0" Width="60" Height="30"  Padding="0" >
+                            <Button x:Name="addRange" Click="add_Range"  Foreground="White" Content="Range"  BorderThickness="0" Width="60" Height="30"  Padding="0" >
                                 <Button.Template>
                                     <ControlTemplate TargetType="Button">
-                                        <Border x:Name="test" CornerRadius="5" BorderThickness="0" Background="#666563">
+                                        <Border  x:Name="test" CornerRadius="5" BorderThickness="0" Background="#666563">
                                             <ContentPresenter  VerticalAlignment="Center" HorizontalAlignment="Center" />
 
                                         </Border>

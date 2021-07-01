@@ -34,3 +34,5 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreap
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Laboratory.Utility.pdb
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Tests.g.cs
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Tests.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\TestRange.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\TestRange.baml

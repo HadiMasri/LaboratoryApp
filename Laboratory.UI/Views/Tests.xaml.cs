@@ -137,5 +137,17 @@ namespace Laboratory.UI.Views
             var confirmDialog = new ConifrmationDialog(SD.Test_Delete_Confirmation, test.Id,null, this, "Test.png");
             confirmDialog.ShowDialog();
         }
+
+        private void add_Range(object sender, RoutedEventArgs e)
+        {
+            var test = (TestViewModel)testsGrid.SelectedItem;
+            var testRange = new TestRange(test.Id);
+            testRange.ShowDialog();
+        }
+
+        private void btn_New_Test(object sender, RoutedEventArgs e)
+        {
+            ClearInput();
+        }
     }
 }

@@ -11,7 +11,8 @@ namespace Laboratory.DAL.UnitOfWork
         ICategoryRepository Category { get; }
 
         ITestRepository Test { get; }
-         
+        ITestRangeRepository TestRange { get; }
+        
         void Save();
     }
 }
