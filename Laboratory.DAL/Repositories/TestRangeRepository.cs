@@ -27,7 +27,6 @@ namespace Laboratory.DAL.Repositories
                 {
                     testFromDb.FromAge = testRange.FromAge;
                     testFromDb.ToAge = testRange.ToAge;
-                    testFromDb.Range = testRange.Range;
                     testFromDb.LowFrom = testRange.LowFrom;
                     testFromDb.HighFrom = testRange.HighFrom;
                     testFromDb.TestId = testRange.TestId;

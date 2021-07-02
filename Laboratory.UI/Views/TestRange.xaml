@@ -15,202 +15,76 @@
         Title="TestRange" Height="700" Width="1300">
     <Border CornerRadius="25" Background="White" >
         <Grid>
-                    <StackPanel Width="1200"  Height="600" Background="#99ededed">
-                    <ComboBox x:Name="comboGender" SelectedValue="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,40,900,500" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+
+            <StackPanel Width="1200"  Height="600" Background="#99ededed">
+                <ComboBox x:Name="comboGender" SelectedValuePath="{Binding Name}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,40,800,500" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                         <ComboBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                         </ComboBox.ItemsPanel>
                     </ComboBox>
-                    <TextBox x:Name="txtFromAge" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-542,600,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtToAge" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-542,300,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtRange" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="370,-542,360,0" materialDesign:HintAssist.Hint="Range:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtLowFrom" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="700,-542,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtFromAge" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-542,450,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtToAge" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-542,100,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                <TextBox x:Name="txtLowFrom" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="650,-542,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
                     <TextBox x:Name="txtHighFrom" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="600,-542,0,0" materialDesign:HintAssist.Hint="HighFrom:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                <Button   BorderThickness="0" Width="80" Margin="850,-1030,0,0" Content="Delete" >
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=comboGender}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False" />
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtFromAge, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtToAge, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtRange, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtLowFrom, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtHighFrom, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Click="btnDeleteRange1"  BorderThickness="0" Width="80" Margin="850,-1030,0,0" Content="Delete" />
 
-                <ComboBox x:Name="comboGender2" SelectedValue="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-460,900,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+
+
+                <ComboBox x:Name="comboGender2" SelectedValuePath="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-460,800,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                         <ComboBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                         </ComboBox.ItemsPanel>
                     </ComboBox>
-                    <TextBox x:Name="txtFromAge2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-460,600,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtToAge2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-460,300,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtRange2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="370,-460,360,0" materialDesign:HintAssist.Hint="Range:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtLowFrom2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="700,-460,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtFromAge2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-460,450,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtToAge2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-460,100,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                <TextBox x:Name="txtLowFrom2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="650,-460,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
                     <TextBox x:Name="txtHighFrom2" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="600,-460,0,0" materialDesign:HintAssist.Hint="HighFrom:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                <Button   BorderThickness="0" Width="80" Margin="850,-870,0,0" Content="Delete" >
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=comboGender2}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False" />
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtFromAge2, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtToAge2, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtRange2, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtLowFrom2, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtHighFrom2, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Click="btnDeleteRange2" BorderThickness="0" Width="80" Margin="850,-870,0,0" Content="Delete" />
 
-                <ComboBox x:Name="comboGender3" SelectedValue="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-370,900,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+
+                <ComboBox x:Name="comboGender3" SelectedValuePath="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-370,800,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                         <ComboBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                         </ComboBox.ItemsPanel>
                     </ComboBox>
-                    <TextBox x:Name="txtFromAge3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-370,600,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtToAge3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-370,300,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtRange3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="370,-370,360,0" materialDesign:HintAssist.Hint="Range:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtLowFrom3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="700,-370,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtFromAge3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-370,450,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtToAge3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-370,100,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                <TextBox x:Name="txtLowFrom3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="650,-370,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
                     <TextBox x:Name="txtHighFrom3" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="600,-370,0,0" materialDesign:HintAssist.Hint="HighFrom:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                <Button  BorderThickness="0" Width="80" Margin="850,-690,0,0" Content="Delete" >
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=comboGender3}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False" />
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtFromAge3, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtToAge3, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtRange3, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtLowFrom3, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtHighFrom3, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Click="btnDeleteRange3" BorderThickness="0" Width="80" Margin="850,-690,0,0" Content="Delete" />
 
-
-                <ComboBox x:Name="comboGender4" SelectedValue="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-280,900,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBox x:Name="comboGender4" SelectedValuePath="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-280,800,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                         <ComboBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                         </ComboBox.ItemsPanel>
                     </ComboBox>
-                    <TextBox x:Name="txtFromAge4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-280,600,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtToAge4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-280,300,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtRange4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="370,-280,360,0" materialDesign:HintAssist.Hint="Range:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtLowFrom4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="700,-280,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtFromAge4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-280,450,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtToAge4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-280,100,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                <TextBox x:Name="txtLowFrom4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="650,-280,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
                     <TextBox x:Name="txtHighFrom4" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="600,-280,0,0" materialDesign:HintAssist.Hint="HighFrom:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                <Button   BorderThickness="0" Width="80" Margin="850,-510,0,0" Content="Delete" >
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=comboGender4}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False" />
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtFromAge4, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtToAge4, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtRange4, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtLowFrom4, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtHighFrom4, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Click="btnDeleteRange4" BorderThickness="0" Width="80" Margin="850,-510,0,0" Content="Delete" />
 
-                <ComboBox x:Name="comboGender5" SelectedValue="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-190,900,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                <ComboBox x:Name="comboGender5" SelectedValuePath="{Binding GenderId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Gender" Margin="0,-190,800,0" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
                         <ComboBox.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <VirtualizingStackPanel />
                             </ItemsPanelTemplate>
                     </ComboBox.ItemsPanel>
                     </ComboBox>
-                    <TextBox x:Name="txtFromAge5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-190,600,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtToAge5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-190,300,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtRange5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="370,-190,360,0" materialDesign:HintAssist.Hint="Range:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                    <TextBox x:Name="txtLowFrom5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="700,-190,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtFromAge5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-190,450,0" materialDesign:HintAssist.Hint="From Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                    <TextBox x:Name="txtToAge5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="0,-190,100,0" materialDesign:HintAssist.Hint="To Age:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
+                <TextBox x:Name="txtLowFrom5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="650,-190,400,0" materialDesign:HintAssist.Hint="Low From:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
                     <TextBox x:Name="txtHighFrom5" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="600,-190,0,0" materialDesign:HintAssist.Hint="HighFrom:" TextWrapping="Wrap"  HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
-                <Button   BorderThickness="0" Width="80" Margin="850,-330,0,0" Content="Delete" >
-                    <Button.Style>
-                        <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFlatButton}">
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding SelectedItems.Count,ElementName=comboGender5}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False" />
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtFromAge5, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtToAge5, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtRange5, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtLowFrom5, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                                <DataTrigger Binding="{Binding Text.Length, ElementName=txtHighFrom5, UpdateSourceTrigger=PropertyChanged}" Value="0">
-                                    <Setter Property="IsEnabled" Value="False"/>
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
+                <Button Style="{StaticResource MaterialDesignFlatButton}" Click="btnDeleteRange5" BorderThickness="0" Width="80" Margin="850,-330,0,0" Content="Delete" />
+
 
                 <Button x:Name="btnAddRange" Click="btn_Add_Range" Width="100" Background="#090D40" Margin="600,-60,0,0" VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Save" >
                         <Button.Triggers>

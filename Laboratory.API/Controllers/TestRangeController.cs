@@ -20,11 +20,11 @@ namespace Laboratory.API.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<TestRange> GetAll()
+        public IEnumerable<TestRange> GetAll(int testId)
         {
             try
             {
-                var allObj = _unitOfWork.TestRange.GetAll(t => t.Test, g => g.Gender);
+                var allObj = _unitOfWork.TestRange.GetAll(t => t.Test, g => g.Gender, s => s.TestId == testId);
                 return allObj.ToList();
             }
             catch (Exception)

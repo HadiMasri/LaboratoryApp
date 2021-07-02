@@ -11,14 +11,14 @@ namespace Laboratory.UI.HttpHelper
 {
     public class TestRangeHelper
     {
-        public static async Task<List<TestRangeViewModel>> GetTestRangesAsync()
+        public static async Task<List<TestRangeViewModel>> GetTestRangesAsync(int testId)
         {
             String Url = "https://localhost:44333/";
             var result = new List<TestRangeViewModel>();
             HttpClient client = new HttpClient();
             client.BaseAddress = new Uri(Url);
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            HttpResponseMessage response = client.GetAsync("TestRange").Result;
+            HttpResponseMessage response = client.GetAsync("TestRange?testId=" + testId).Result;
             if (response.IsSuccessStatusCode)
             {
                 var responseBody = await response.Content.ReadAsStringAsync();

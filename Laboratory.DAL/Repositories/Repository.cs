@@ -38,15 +38,23 @@ namespace Laboratory.DAL.Repositories
             throw new NotImplementedException();
         }
 
-        public List<TEntity> GetAll(Expression<Func<TEntity, object>> include1 = null, Expression<Func<TEntity, object>> include2 = null)
+        public List<TEntity> GetAll(Expression<Func<TEntity, object>> include1 = null, Expression<Func<TEntity, object>> include2 = null, Expression<Func<TEntity, bool>> Filter = null)
         {
             try
             {
-                if (include1 != null && include2 != null)
+                if (include1 != null && include2 != null && Filter != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).Include(include2).Where(Filter).ToList();
+                }
+                else if (include1 != null && include2 != null)
                 {
                     return _dbContext.Set<TEntity>().Include(include1).Include(include2).ToList();
                 }
-                else if (include1 != null)
+                else if (include1 != null && Filter != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).Where(Filter).ToList();
+                }
+                else if (include1 != null )
                 {
                     return _dbContext.Set<TEntity>().Include(include1).ToList();
                 }
@@ -68,5 +76,7 @@ namespace Laboratory.DAL.Repositories
             var entity = dbSet.Find(id);
             dbSet.Remove(entity);
         }
+
+
     }
 }
