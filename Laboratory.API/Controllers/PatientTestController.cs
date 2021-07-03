@@ -10,21 +10,21 @@ namespace Laboratory.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class TestRangeController : Controller
+    public class PatientTestController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public TestRangeController(IUnitOfWork unitOfWork)
+        public PatientTestController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         [HttpGet]
-        public IEnumerable<TestRange> GetAll(int testId)
+        public IEnumerable<Patient_Test> GetAll(int id)
         {
             try
             {
-                var allObj = _unitOfWork.TestRange.GetAll(t => t.Test, g => g.Gender,null, null, s => s.TestId == testId);
+                var allObj = _unitOfWork.PatientTest.GetAll(t => t.Test, p => p.Patient, c => c.Test.Category, g => g.Patient.Gender, f => f.PatientId == id);
                 return allObj.ToList();
             }
             catch (Exception)
@@ -33,35 +33,21 @@ namespace Laboratory.API.Controllers
             }
         }
 
-        [HttpGet("{id:int}")]
-        public TestRange GetOneById(int testId)
-        {
-            try
-            {
-                var allObj = _unitOfWork.TestRange.GetFirstOrDefault(s => s.TestId == testId);
-                return allObj;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-
         [HttpPost]
-        public IActionResult Upsert(TestRange testRange)
+        public IActionResult Upsert(Patient_Test patient_Test)
         {
             try
             {
-                if (testRange.Id == 0)
+                if (patient_Test.Id == 0)
                 {
-                    _unitOfWork.TestRange.Add(testRange);
+                    _unitOfWork.PatientTest.Add(patient_Test);
                 }
                 else
                 {
-                    _unitOfWork.TestRange.Update(testRange);
+                    _unitOfWork.PatientTest.Update(patient_Test);
                 }
                 _unitOfWork.Save();
-                return Json(new { success = true, message = "Test Range Added Successful" });
+                return Json(new { success = true, message = "Test Added To Patients Successful" });
             }
             catch (Exception)
             {
@@ -75,7 +61,7 @@ namespace Laboratory.API.Controllers
             try
             {
                 if (id == 0) return BadRequest();
-                _unitOfWork.TestRange.Remove(id);
+                _unitOfWork.PatientTest.Remove(id);
                 _unitOfWork.Save();
                 return Json(new { success = true, message = " Deleted Successfully" });
             }

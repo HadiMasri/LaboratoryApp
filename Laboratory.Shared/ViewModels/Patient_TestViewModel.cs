@@ -7,5 +7,6 @@
         public PatientViewModel Patient { get; set; }
         public int TestId { get; set; }
         public TestViewModel Test { get; set; }
+        public string Result { get; set; }
     }
 }

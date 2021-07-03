@@ -7,5 +7,6 @@
         public PatientDto Patient { get; set; }
         public int TestId { get; set; }
         public TestDto Test { get; set; }
+        public string Result { get; set; }
     }
 }

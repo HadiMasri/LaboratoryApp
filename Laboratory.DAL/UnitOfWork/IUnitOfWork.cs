@@ -12,6 +12,7 @@ namespace Laboratory.DAL.UnitOfWork
 
         ITestRepository Test { get; }
         ITestRangeRepository TestRange { get; }
+        IPatientTestRepository PatientTest { get; }
         
         void Save();
     }

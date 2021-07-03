@@ -27,6 +27,22 @@ namespace Laboratory.UI.HttpHelper
             return result;
         }
 
+        public static async Task<TestRangeViewModel> GetOneTestRangeAsync(int testId)
+        {
+            String Url = "https://localhost:44333/";
+            var result = new TestRangeViewModel();
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.GetAsync("TestRange?id=" + testId).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseBody = await response.Content.ReadAsStringAsync();
+                result = JsonConvert.DeserializeObject<TestRangeViewModel>(responseBody);
+            }
+            return result;
+        }
+
         public static async Task<string> AddOrUpdateTestAsync(TestRangeViewModel testRangetVM)
         {
             HttpClient httpClient = new HttpClient();

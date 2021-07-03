@@ -3,14 +3,16 @@ using Laboratory.DAL;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Laboratory.DAL.Migrations
 {
     [DbContext(typeof(LaboratoryDbContext))]
-    partial class LaboratoryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210702153010_PatientTestTableNameEdited")]
+    partial class PatientTestTableNameEdited
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -254,9 +256,6 @@ namespace Laboratory.DAL.Migrations
 
                     b.Property<int>("PatientId")
                         .HasColumnType("int");
-
-                    b.Property<string>("Result")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TestId")
                         .HasColumnType("int");

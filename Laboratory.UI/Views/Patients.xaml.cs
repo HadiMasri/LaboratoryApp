@@ -3,6 +3,7 @@ using Laboratory.UI.HttpHelper;
 using Laboratory.Utility;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -203,8 +204,74 @@ namespace Laboratory.UI.Views
                 txtPhoneNr.Text = patient.PhoneNr;
                 txtDiagnosis.Text = patient.Diagnosis;
             }
- 
+            GetPatientTestsAsync(patient.Id);
+        }
+        public void GetPatientTestsAsync(int patientId)
+        {
+            Task<List<Patient_TestViewModel>> patientTestsTask = PatientTestHelper.GetPatientTestsAsync(patientId);
+            List<Patient_TestViewModel> patientTests = patientTestsTask.Result;
+            userTestsGrid.Items.Refresh();
+            List<TestViewModel> patientTest = new List<TestViewModel>();
+            foreach (var item in patientTests)
+            {
+                Task<List<TestRangeViewModel>> Ranges = TestRangeHelper.GetTestRangesAsync(item.TestId);
+                List<TestRangeViewModel> testRanges = Ranges.Result;
+
+                var range = new TestRangeViewModel();
+                foreach (var item2 in testRanges)
+                {
+                    if (Enumerable.Range(item2.FromAge, item2.ToAge).Contains(item.Patient.Age) && item.Patient.Gender.Name == item2.Gender.Name)
+                    {
+                        range = item2;
+                    }
+                }
+                patientTest.Add(new TestViewModel
+                {
+                    Id = item.Test.Id,
+                    PatientId = item.PatientId,
+                    PatientTestId = item.Id,
+                    Name = item.Test.Name,
+                    AppearName = item.Test.AppearName,
+                    Range = $"{range.LowFrom} - {range.HighFrom}",
+                    Code = item.Test.Code,
+                    Result = item.Result,
+                    Price = item.Test.Price,
+                    CategoryName = item.Test.Category.Name,
+                    Note = item.Test.Note,
+                }) ;
+            }
+            userTestsGrid.ItemsSource = patientTest;
+        }
+        private async void add_Test_To_Patient(object sender, MouseButtonEventArgs e)
+        {
+            var patient = (PatientViewModel)patientsGrid.SelectedItem;
+            if (patient != null)
+            {
+                var test = (TestViewModel)testsGrid.SelectedItem;
+                var patientTest = new Patient_TestViewModel();
+                patientTest.TestId = test.Id;
+                patientTest.PatientId = patient.Id;
+                await PatientTestHelper.AddOrUpdatePatientTestAsync(patientTest);
+                GetPatientTestsAsync(patient.Id);
+            }
+            else
+            {
+                MessageBox.Show("Please select a patient first");
+            }
         }
 
+        private async void userTestsGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        {
+            var editedTextbox = e.EditingElement as TextBox;
+            var updatedResult = editedTextbox.Text;
+            var patientTest = (TestViewModel)userTestsGrid.SelectedItem;
+            Patient_TestViewModel updatedPatientTest = new Patient_TestViewModel();
+            updatedPatientTest.Id = patientTest.PatientTestId;
+            updatedPatientTest.PatientId = patientTest.PatientId;
+            updatedPatientTest.TestId = patientTest.Id;
+            updatedPatientTest.Result = updatedResult;
+            await PatientTestHelper.AddOrUpdatePatientTestAsync(updatedPatientTest);
+            GetPatientTestsAsync(patientTest.PatientId);
+        }
     }
 }

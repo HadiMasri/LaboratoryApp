@@ -18,13 +18,14 @@ namespace Laboratory.DAL.UnitOfWork
             Test = new TestRepository(_dbContext, _mapper);
             Category = new CategoryRepository(_dbContext, _mapper);
             TestRange = new TestRangeRepository(_dbContext, _mapper);
-
+            PatientTest = new PatientTestRepository(_dbContext, _mapper);
         }
         public void Dispose()
         {
             _dbContext.Dispose();
         }
         public IPatientRepository Patient { get; private set; }
+        public IPatientTestRepository PatientTest { get; private set; }
         public ITitleRepository Title { get; private set; }
         public IGenderRepository Gender { get; private set; }
         public ITestRepository Test { get; private set; }

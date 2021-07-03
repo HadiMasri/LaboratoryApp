@@ -142,7 +142,7 @@
             </DataGrid.Columns>
             
         </DataGrid>
-        <DataGrid x:Name="testsGrid" ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="1070 80 0 0" Height="600" Width="200" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
+        <DataGrid x:Name="testsGrid" MouseDoubleClick="add_Test_To_Patient" ItemsSource="{Binding Items2}" IsReadOnly="True" VerticalAlignment="Top" Margin="1070 80 0 0" Height="600" Width="200" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
@@ -156,7 +156,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid x:Name="userTestsGrid" ItemsSource="{Binding Items2}" VerticalAlignment="Top" Margin="0 310 0 0" Height="200" Width="800" CanUserAddRows="False" SelectionUnit="Cell" SelectionMode="Extended"  >
+        <DataGrid CellEditEnding="userTestsGrid_CellEditEnding"  x:Name="userTestsGrid" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding patientTest}" AutoGenerateColumns="False" VerticalAlignment="Top" Margin="0 310 0 0" Height="200" Width="800" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
@@ -165,13 +165,62 @@
                 </Style>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                <DataGridTextColumn  Header="Appearing Name" Binding="{Binding AppearingName}" Width="135"    />
-                <DataGridTextColumn  Header="Test Name" Binding="{Binding TestName}" Width="*"    />
-                <DataGridTextColumn  Header="Category" Binding="{Binding Category}" Width="*"    />
-                <DataGridTextColumn  Header="Range" Binding="{Binding Range}" Width="*"    />
-                <DataGridTextColumn  Header="Result" Binding="{Binding Result}" Width="*"    />
-                <DataGridTextColumn  Header="Price" Binding="{Binding Price}" Width="*"    />
-                <DataGridTextColumn  Header="Note" Binding="{Binding Note}" Width="*"    />
+                <DataGridTextColumn  Header="Code" Binding="{Binding Code}" IsReadOnly="True" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Appearing Name" Binding="{Binding AppearName}" IsReadOnly="True" Width="135"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Name" Binding="{Binding Name}" IsReadOnly="True" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Category" Binding="{Binding CategoryName}" IsReadOnly="True" Width="135"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Range" Binding="{Binding Range}" IsReadOnly="True" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Result" Binding="{Binding Result}"  IsReadOnly="False" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Price" Binding="{Binding Price}" IsReadOnly="True" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Note" Binding="{Binding Note}" IsReadOnly="True" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button x:Name="btnNew"  Content="New" Width="100" Click="New_Patient" Background="#61637A" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Margin="300,220,0,0" VerticalAlignment="Top" >

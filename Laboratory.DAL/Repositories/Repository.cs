@@ -33,16 +33,32 @@ namespace Laboratory.DAL.Repositories
             }
         }
 
-        public TEntity FindById(int Id)
+        public TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> Filter = null)
         {
-            throw new NotImplementedException();
+            return dbSet.Where(Filter).FirstOrDefault();
         }
 
-        public List<TEntity> GetAll(Expression<Func<TEntity, object>> include1 = null, Expression<Func<TEntity, object>> include2 = null, Expression<Func<TEntity, bool>> Filter = null)
+        public List<TEntity> GetAll(Expression<Func<TEntity, object>> include1 = null, Expression<Func<TEntity, object>> include2 = null, Expression<Func<TEntity, object>> include3 = null, Expression<Func<TEntity, object>> include4 = null, Expression<Func<TEntity, bool>> Filter = null)
         {
             try
             {
-                if (include1 != null && include2 != null && Filter != null)
+                if (include1 != null && include2 != null && include3 != null && include4 != null && Filter != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).Include(include2).Include(include3).Include(include4).Where(Filter).ToList();
+                }
+                else if (include1 != null && include2 != null && include3 != null && include4 != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).Include(include2).Include(include3).Include(include4).ToList();
+                }
+                else if (include1 != null && include2 != null && include3 != null && Filter != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).Include(include2).Include(include3).Where(Filter).ToList();
+                }
+                else if (include1 != null && include2 != null && include3 != null)
+                {
+                    return _dbContext.Set<TEntity>().Include(include1).Include(include2).Include(include3).ToList();
+                }
+                else if (include1 != null && include2 != null && Filter != null)
                 {
                     return _dbContext.Set<TEntity>().Include(include1).Include(include2).Where(Filter).ToList();
                 }
@@ -54,7 +70,7 @@ namespace Laboratory.DAL.Repositories
                 {
                     return _dbContext.Set<TEntity>().Include(include1).Where(Filter).ToList();
                 }
-                else if (include1 != null )
+                else if (include1 != null)
                 {
                     return _dbContext.Set<TEntity>().Include(include1).ToList();
                 }
@@ -76,7 +92,6 @@ namespace Laboratory.DAL.Repositories
             var entity = dbSet.Find(id);
             dbSet.Remove(entity);
         }
-
 
     }
 }
