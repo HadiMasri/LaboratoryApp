@@ -10,6 +10,9 @@
     <Compile Update="Views\ConifrmationDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\flowDocument.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\MainMenu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -17,6 +20,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\Patients.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\PrintDialog.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\TestRange.xaml.cs">
@@ -30,6 +36,9 @@
     <Page Update="Views\ConifrmationDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\flowDocument.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\MainMenu.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -37,6 +46,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Patients.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\PrintDialog.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\TestRange.xaml">

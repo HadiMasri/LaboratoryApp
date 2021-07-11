@@ -36,3 +36,16 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreap
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Tests.baml
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\TestRange.g.cs
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\TestRange.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\flowDocument.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\PrintDialog.g.cs
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\flowDocument.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\PrintDialog.baml
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Base.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Base.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Syncfusion.PdfViewer.WPF.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Syncfusion.Shared.WPF.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\PdfSharp.Charting.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\PdfSharp.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\de\PdfSharp.Charting.resources.dll
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\de\PdfSharp.resources.dll

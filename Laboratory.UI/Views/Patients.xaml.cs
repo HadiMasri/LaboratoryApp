@@ -1,8 +1,11 @@
 ﻿using Laboratory.Shared.ViewModels;
 using Laboratory.UI.HttpHelper;
 using Laboratory.Utility;
+using Syncfusion.Pdf;
+using Syncfusion.Pdf.Graphics;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -272,6 +275,13 @@ namespace Laboratory.UI.Views
             updatedPatientTest.Result = updatedResult;
             await PatientTestHelper.AddOrUpdatePatientTestAsync(updatedPatientTest);
             GetPatientTestsAsync(patientTest.PatientId);
+        }
+
+        private void print(object sender, RoutedEventArgs e)
+        {
+            var patient = (PatientViewModel)patientsGrid.SelectedItem;
+            flowDocument flow = new flowDocument(patient.Id);
+            flow.ShowDialog();
         }
     }
 }

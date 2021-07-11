@@ -108,6 +108,18 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.1, )"
+            },
+            "PdfSharp": {
+              "target": "Package",
+              "version": "[1.50.5147, )"
+            },
+            "Syncfusion.Pdf.Wpf": {
+              "target": "Package",
+              "version": "[19.2.0.44, )"
+            },
+            "Syncfusion.PdfViewer.WPF": {
+              "target": "Package",
+              "version": "[19.2.0.44, )"
             }
           },
           "imports": [

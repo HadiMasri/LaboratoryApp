@@ -35,6 +35,83 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "PDFsharp/1.50.5147": {
+        "type": "package",
+        "compile": {
+          "lib/net20/PdfSharp.Charting.dll": {},
+          "lib/net20/PdfSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net20/PdfSharp.Charting.dll": {},
+          "lib/net20/PdfSharp.dll": {}
+        },
+        "resource": {
+          "lib/net20/de/PdfSharp.Charting.resources.dll": {
+            "locale": "de"
+          },
+          "lib/net20/de/PdfSharp.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Syncfusion.Compression.Base/19.2.0.44": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll": {}
+        }
+      },
+      "Syncfusion.Licensing/19.2.0.44": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Licensing.dll": {}
+        }
+      },
+      "Syncfusion.Pdf.Wpf/19.2.0.44": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll": {}
+        }
+      },
+      "Syncfusion.PdfViewer.WPF/19.2.0.44": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Compression.Base": "19.2.0.44",
+          "Syncfusion.Licensing": "19.2.0.44",
+          "Syncfusion.Pdf.Wpf": "19.2.0.44",
+          "Syncfusion.Shared.WPF": "19.2.0.44"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.dll": {}
+        }
+      },
+      "Syncfusion.Shared.WPF/19.2.0.44": {
+        "type": "package",
+        "dependencies": {
+          "Syncfusion.Licensing": "19.2.0.44"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll": {}
+        }
+      },
       "Laboratory.Shared/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -140,6 +217,202 @@
         "packageIcon.png"
       ]
     },
+    "PDFsharp/1.50.5147": {
+      "sha512": "vr5KBIqcXu2hqZ43UTwPR+jqHgMrT5tsPtJvEF+mORKoBNMh3bRWgAwic0U1sT2IVb4PR5m0GyQxnmCz8jBHWg==",
+      "type": "package",
+      "path": "pdfsharp/1.50.5147",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/PdfSharp.Charting.dll",
+        "lib/net20/PdfSharp.Charting.xml",
+        "lib/net20/PdfSharp.dll",
+        "lib/net20/PdfSharp.xml",
+        "lib/net20/de/PdfSharp.Charting.resources.dll",
+        "lib/net20/de/PdfSharp.resources.dll",
+        "pdfsharp.1.50.5147.nupkg.sha512",
+        "pdfsharp.nuspec"
+      ]
+    },
+    "Syncfusion.Compression.Base/19.2.0.44": {
+      "sha512": "V/sklQviCUXkiyJqtXZ4errVwscZt9F53hYWTha+Kc7PMkv8WwYHd5SRlnBeefQ1qHiQhp7PWIEsVdxm+/tWsQ==",
+      "type": "package",
+      "path": "syncfusion.compression.base/19.2.0.44",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net20/Syncfusion.Compression.Base.dll",
+        "lib/net20/Syncfusion.Compression.Base.xml",
+        "lib/net35/Syncfusion.Compression.Base.dll",
+        "lib/net35/Syncfusion.Compression.Base.xml",
+        "lib/net40/Syncfusion.Compression.Base.dll",
+        "lib/net40/Syncfusion.Compression.Base.xml",
+        "lib/net45/Syncfusion.Compression.Base.dll",
+        "lib/net45/Syncfusion.Compression.Base.xml",
+        "lib/net451/Syncfusion.Compression.Base.dll",
+        "lib/net451/Syncfusion.Compression.Base.xml",
+        "lib/net46/Syncfusion.Compression.Base.dll",
+        "lib/net46/Syncfusion.Compression.Base.xml",
+        "lib/net5.0/Syncfusion.Compression.Base.dll",
+        "lib/net5.0/Syncfusion.Compression.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Compression.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Compression.Base.xml",
+        "syncfusion.compression.base.19.2.0.44.nupkg.sha512",
+        "syncfusion.compression.base.nuspec"
+      ]
+    },
+    "Syncfusion.Licensing/19.2.0.44": {
+      "sha512": "XekMdME0qXUzX3uJSxVV6FgeC3ydgxpETMmtjck8enzpjKhlAU692uAVtyqAkecqa4YFJmXiKV/zEkKfjdLVWA==",
+      "type": "package",
+      "path": "syncfusion.licensing/19.2.0.44",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10.0/Syncfusion.Licensing.dll",
+        "lib/MonoAndroid90/Syncfusion.Licensing.dll",
+        "lib/Xamarin.Mac/Syncfusion.Licensing.dll",
+        "lib/Xamarin.iOS10/Syncfusion.Licensing.dll",
+        "lib/net20/Syncfusion.Licensing.dll",
+        "lib/net35/Syncfusion.Licensing.dll",
+        "lib/net40/Syncfusion.Licensing.dll",
+        "lib/net45/Syncfusion.Licensing.dll",
+        "lib/net451/Syncfusion.Licensing.dll",
+        "lib/net46/Syncfusion.Licensing.dll",
+        "lib/net5.0/Syncfusion.Licensing.dll",
+        "lib/netcoreapp3.1/Syncfusion.Licensing.dll",
+        "lib/netstandard1.0/Syncfusion.Licensing.dll",
+        "lib/netstandard1.2/Syncfusion.Licensing.dll",
+        "lib/netstandard1.4/Syncfusion.Licensing.dll",
+        "lib/netstandard2.0/Syncfusion.Licensing.dll",
+        "lib/portable-win+net45+wp80+win81+wpa81/Syncfusion.Licensing.dll",
+        "lib/uap10.0/Syncfusion.Licensing.dll",
+        "syncfusion.licensing.19.2.0.44.nupkg.sha512",
+        "syncfusion.licensing.nuspec"
+      ]
+    },
+    "Syncfusion.Pdf.Wpf/19.2.0.44": {
+      "sha512": "4AxOde9239F+8k/vjJzvKPmTe90IWoTT2h/neQDX92VhsrnXsPpa28/q+ITsT6Ux7BRdtcnTDiS2yATpxe40+A==",
+      "type": "package",
+      "path": "syncfusion.pdf.wpf/19.2.0.44",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Syncfusion.Pdf.Base.dll",
+        "lib/net35/Syncfusion.Pdf.Base.xml",
+        "lib/net40/Syncfusion.Pdf.Base.dll",
+        "lib/net40/Syncfusion.Pdf.Base.xml",
+        "lib/net45/Syncfusion.Pdf.Base.dll",
+        "lib/net45/Syncfusion.Pdf.Base.xml",
+        "lib/net451/Syncfusion.Pdf.Base.dll",
+        "lib/net451/Syncfusion.Pdf.Base.xml",
+        "lib/net46/Syncfusion.Pdf.Base.dll",
+        "lib/net46/Syncfusion.Pdf.Base.xml",
+        "lib/net5.0-windows/Syncfusion.Pdf.Base.dll",
+        "lib/net5.0-windows/Syncfusion.Pdf.Base.xml",
+        "lib/netcoreapp3.1/Syncfusion.Pdf.Base.dll",
+        "lib/netcoreapp3.1/Syncfusion.Pdf.Base.xml",
+        "syncfusion.pdf.wpf.19.2.0.44.nupkg.sha512",
+        "syncfusion.pdf.wpf.nuspec"
+      ]
+    },
+    "Syncfusion.PdfViewer.WPF/19.2.0.44": {
+      "sha512": "fpx/YdARliI03cu9enjGCcAnPOzQyVfXuH8yteEt9CJRODMwmfKzZemYUQ4yCAEFzo6NDzZHQEGP1IM1VcRVVQ==",
+      "type": "package",
+      "path": "syncfusion.pdfviewer.wpf/19.2.0.44",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net35/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net35/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net35/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net35/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net40/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net40/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net40/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net40/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net40/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net45/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net45/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net45/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net45/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net45/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net451/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net451/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net451/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net451/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net451/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net46/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net46/Design/Syncfusion.PdfViewer.Wpf.VisualStudio.Design.dll",
+        "lib/net46/Design/Syncfusion.PdfViewer.Wpf.dll.Design.dll",
+        "lib/net46/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net46/Syncfusion.PdfViewer.WPF.xml",
+        "lib/net5.0-windows/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/net5.0-windows/Syncfusion.PdfViewer.WPF.dll",
+        "lib/net5.0-windows/Syncfusion.PdfViewer.WPF.xml",
+        "lib/netcoreapp3.1/Design/Syncfusion.PdfViewer.WPF.DesignTools.dll",
+        "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.dll",
+        "lib/netcoreapp3.1/Syncfusion.PdfViewer.WPF.xml",
+        "syncfusion.pdfviewer.wpf.19.2.0.44.nupkg.sha512",
+        "syncfusion.pdfviewer.wpf.nuspec",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
+    "Syncfusion.Shared.WPF/19.2.0.44": {
+      "sha512": "0k4FWUo42ZmHJV47DVTBkXqQgYSNNNEmCEwi4t4tZmrKr/oqiI8UAgpoiHeqkkUrdeSlK5MDZPjWWsfuQG9dxw==",
+      "type": "package",
+      "path": "syncfusion.shared.wpf/19.2.0.44",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net35/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net35/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net35/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net35/Syncfusion.Shared.WPF.dll",
+        "lib/net35/Syncfusion.Shared.WPF.xml",
+        "lib/net40/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net40/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net40/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net40/Syncfusion.Shared.WPF.dll",
+        "lib/net40/Syncfusion.Shared.WPF.xml",
+        "lib/net45/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net45/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net45/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net45/Syncfusion.Shared.WPF.dll",
+        "lib/net45/Syncfusion.Shared.WPF.xml",
+        "lib/net451/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net451/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net451/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net451/Syncfusion.Shared.WPF.dll",
+        "lib/net451/Syncfusion.Shared.WPF.xml",
+        "lib/net46/Design/Syncfusion.Design.Wpf.dll",
+        "lib/net46/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.Expression.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.VisualStudio.Design.dll",
+        "lib/net46/Design/Syncfusion.Shared.Wpf.dll.Design.dll",
+        "lib/net46/Syncfusion.Shared.WPF.dll",
+        "lib/net46/Syncfusion.Shared.WPF.xml",
+        "lib/net5.0-windows/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/net5.0-windows/Syncfusion.Shared.WPF.dll",
+        "lib/net5.0-windows/Syncfusion.Shared.WPF.xml",
+        "lib/netcoreapp3.1/Design/Syncfusion.Shared.WPF.DesignTools.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.dll",
+        "lib/netcoreapp3.1/Syncfusion.Shared.WPF.xml",
+        "syncfusion.shared.wpf.19.2.0.44.nupkg.sha512",
+        "syncfusion.shared.wpf.nuspec",
+        "tools/VisualStudioToolsManifest.xml"
+      ]
+    },
     "Laboratory.Shared/1.0.0": {
       "type": "project",
       "path": "../Laboratory.Shared/Laboratory.Shared.csproj",
@@ -156,7 +429,10 @@
       "Laboratory.Shared >= 1.0.0",
       "Laboratory.Utility >= 1.0.0",
       "MaterialDesignThemes >= 4.1.0",
-      "Newtonsoft.Json >= 13.0.1"
+      "Newtonsoft.Json >= 13.0.1",
+      "PdfSharp >= 1.50.5147",
+      "Syncfusion.Pdf.Wpf >= 19.2.0.44",
+      "Syncfusion.PdfViewer.WPF >= 19.2.0.44"
     ]
   },
   "packageFolders": {
@@ -212,6 +488,18 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.1, )"
+          },
+          "PdfSharp": {
+            "target": "Package",
+            "version": "[1.50.5147, )"
+          },
+          "Syncfusion.Pdf.Wpf": {
+            "target": "Package",
+            "version": "[19.2.0.44, )"
+          },
+          "Syncfusion.PdfViewer.WPF": {
+            "target": "Package",
+            "version": "[19.2.0.44, )"
           }
         },
         "imports": [
@@ -235,5 +523,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'PDFsharp 1.50.5147' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "PDFsharp",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }
