@@ -8,7 +8,7 @@ namespace Laboratory.DAL.IRepositories
     {
         void Add(TEntity t);
         List<TEntity> GetAll(Expression<Func<TEntity, object>> include1 = null, Expression<Func<TEntity, object>> include2 = null, Expression<Func<TEntity, object>> include3 = null, Expression<Func<TEntity, object>> include4 = null, Expression<Func<TEntity, bool>> Filter = null);
-        TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> Filter = null);
+        TEntity GetFirstOrDefault(Expression<Func<TEntity, object>> include1 = null, Expression < Func<TEntity, bool>> Filter = null);
         void Remove(int id);
     }
 }

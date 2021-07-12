@@ -33,6 +33,20 @@ namespace Laboratory.API.Controllers
             }
         }
 
+        [HttpGet("{id:int}")]
+        public Patient GetOneById(int id)
+        {
+            try
+            {
+                var allObj = _unitOfWork.Patient.GetFirstOrDefault(g => g.Gender , s => s.Id == id);
+                return allObj;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
         [HttpPost]
         public IActionResult Upsert(Patient patient)
         {

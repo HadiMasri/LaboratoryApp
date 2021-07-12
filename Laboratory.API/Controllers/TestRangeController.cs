@@ -33,19 +33,6 @@ namespace Laboratory.API.Controllers
             }
         }
 
-        [HttpGet("{id:int}")]
-        public TestRange GetOneById(int testId)
-        {
-            try
-            {
-                var allObj = _unitOfWork.TestRange.GetFirstOrDefault(s => s.TestId == testId);
-                return allObj;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
 
         [HttpPost]
         public IActionResult Upsert(TestRange testRange)

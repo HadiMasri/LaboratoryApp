@@ -33,9 +33,16 @@ namespace Laboratory.DAL.Repositories
             }
         }
 
-        public TEntity GetFirstOrDefault(Expression<Func<TEntity, bool>> Filter = null)
+        public TEntity GetFirstOrDefault(Expression<Func<TEntity, object>> include = null, Expression<Func<TEntity, bool>> Filter = null)
         {
-            return dbSet.Where(Filter).FirstOrDefault();
+            if (include != null)
+            {
+                return dbSet.Include(include).Where(Filter).FirstOrDefault();
+            }
+            else
+            {
+                return dbSet.Where(Filter).FirstOrDefault();
+            }
         }
 
         public List<TEntity> GetAll(Expression<Func<TEntity, object>> include1 = null, Expression<Func<TEntity, object>> include2 = null, Expression<Func<TEntity, object>> include3 = null, Expression<Func<TEntity, object>> include4 = null, Expression<Func<TEntity, bool>> Filter = null)

@@ -41,6 +41,21 @@ namespace Laboratory.UI.HttpHelper
             return result;
         }
 
+        public static async Task<PatientViewModel> GetOnePatientAsync(int patientId)
+        {
+            String Url = "https://localhost:44333/";
+            var result = new PatientViewModel();
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri(Url);
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            HttpResponseMessage response = client.GetAsync("Patient/" + patientId).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseBody = await response.Content.ReadAsStringAsync();
+                result = JsonConvert.DeserializeObject<PatientViewModel>(responseBody);
+            }
+            return result;
+        }
         public static void DeletePatientAsync(int patientId)
         {
             String Url = "https://localhost:44333/";
