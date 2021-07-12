@@ -12,3 +12,17 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\bin\Debug\netcorea
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.DAL.pdb
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.Domain.pdb
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.csproj.CopyComplete
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.BLL.deps.json
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.BLL.dll
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.BLL.pdb
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.DAL.dll
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.Domain.dll
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.DAL.pdb
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\bin\Debug\netcoreapp3.1\Laboratory.Domain.pdb
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.csproj.AssemblyReference.cache
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.AssemblyInfoInputs.cache
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.AssemblyInfo.cs
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.csproj.CoreCompileInputs.cache
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.csproj.CopyComplete
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.dll
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.BLL\obj\Debug\netcoreapp3.1\Laboratory.BLL.pdb

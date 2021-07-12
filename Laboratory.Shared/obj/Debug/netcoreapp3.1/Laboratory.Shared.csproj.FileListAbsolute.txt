@@ -7,3 +7,12 @@ C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Shared\obj\Debug\netco
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.dll
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.pdb
 C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.csprojAssemblyReference.cache
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\bin\Debug\netcoreapp3.1\Laboratory.Shared.deps.json
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\bin\Debug\netcoreapp3.1\Laboratory.Shared.dll
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\bin\Debug\netcoreapp3.1\Laboratory.Shared.pdb
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.csproj.AssemblyReference.cache
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.AssemblyInfoInputs.cache
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.AssemblyInfo.cs
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.dll
+C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Shared\obj\Debug\netcoreapp3.1\Laboratory.Shared.pdb

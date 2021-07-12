@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MG+42e6AosXmO2oSwxEmUm+EZXAo7vSfy0O9qcPWzazRsOqApS5pU4f5GJoXOFPQ3DI28GEmqgNo5QTeUnfr+Q==",
+  "dgSpecHash": "UjotwiApPhbi8lJ68UwlDqVydualSKjKgNVc+lSDJ+pDor0roRYVbvxe6QbCgmrQ9nPwHdHXJPdKW5t39GJt6g==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
+  "projectFilePath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hadi\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",
     "C:\\Users\\Hadi\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512",

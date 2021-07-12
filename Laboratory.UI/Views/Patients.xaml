@@ -101,13 +101,13 @@
 
 
 
-        <DataGrid    x:Name="patientsGrid" SelectionChanged="patientsGrid_SelectionChanged" SelectedItem="{Binding SelectedItem}" IsReadOnly="True" VerticalAlignment="Top" Margin="-1050 80 0 0"
-                  Height="600" Width="200" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
+        <DataGrid    x:Name="patientsGrid" SelectionChanged="patientsGrid_SelectionChanged" SelectedItem="{Binding SelectedItem}" IsReadOnly="True" VerticalAlignment="Top" Margin="-1150 80 0 0"
+                  Height="700" Width="250" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
 
             <DataGrid.Resources>
                     <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="#24426E" />
-                        <Setter Property="HorizontalContentAlignment" Value="Center" />
+                        <Setter Property="HorizontalContentAlignment" Value="Left" />
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="BorderThickness" Value="0" />
                 </Style>
@@ -118,14 +118,14 @@
    
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="HorizontalAlignment" Value="Left" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn  Header="Patients" Binding="{Binding FullName}"     Width="*">
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
-                            <Setter Property="HorizontalAlignment" Value="Center" />
+                            <Setter Property="HorizontalAlignment" Value="Left" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
  
@@ -142,7 +142,7 @@
             </DataGrid.Columns>
             
         </DataGrid>
-        <DataGrid x:Name="testsGrid" MouseDoubleClick="add_Test_To_Patient" ItemsSource="{Binding Items2}" IsReadOnly="True" VerticalAlignment="Top" Margin="1070 80 0 0" Height="600" Width="200" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
+        <DataGrid x:Name="testsGrid" MouseDoubleClick="add_Test_To_Patient" ItemsSource="{Binding Items2}" IsReadOnly="True" VerticalAlignment="Top" Margin="1150 80 0 0" Height="700" Width="250" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
@@ -152,11 +152,17 @@
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="Code" Binding="{Binding Code}" Width="63"    />
-                <DataGridTextColumn  Header="Test" Binding="{Binding AppearName}" Width="*"    />
+                <DataGridTextColumn  Header="Test" Binding="{Binding AppearName}" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
 
-        <DataGrid CellEditEnding="userTestsGrid_CellEditEnding"  x:Name="userTestsGrid" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding patientTest}" AutoGenerateColumns="False" VerticalAlignment="Top" Margin="0 310 0 0" Height="350" Width="800" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
+        <DataGrid CellEditEnding="userTestsGrid_CellEditEnding"  x:Name="userTestsGrid" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding patientTest}" AutoGenerateColumns="False" VerticalAlignment="Top" Margin="0 310 0 0" Height="470" Width="800" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
@@ -241,7 +247,7 @@
                 </EventTrigger>
             </Button.Triggers>
         </Button>
-        <Button  Content="print" Height="50" Width="100" Margin="0,600,0,0" Click="print"></Button>
+        <Button  Content="print" Height="50" Width="100" Margin="0,800,0,0" Click="print"></Button>
     </Grid>
 
 </UserControl>
