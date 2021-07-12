@@ -162,6 +162,7 @@ namespace Laboratory.UI.Views
             gfx.DrawString("Tests Report", new XFont("Britannic Bold", 17, XFontStyle.Regular), brush, new XPoint(250, 200));
 
             snoColumnVal = new XRect(60, 750, 485, 3);
+            brush = new XSolidBrush(XColor.FromArgb(0, 4, 74));
             gfx.DrawRectangle(XPens.Transparent, brush, snoColumnVal);
 
 
