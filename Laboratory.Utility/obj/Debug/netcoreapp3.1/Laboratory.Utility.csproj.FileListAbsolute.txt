@@ -15,3 +15,4 @@ C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Utility\obj\Debug\netcoreapp3.1\L
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Utility\obj\Debug\netcoreapp3.1\Laboratory.Utility.csproj.CoreCompileInputs.cache
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Utility\obj\Debug\netcoreapp3.1\Laboratory.Utility.dll
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.Utility\obj\Debug\netcoreapp3.1\Laboratory.Utility.pdb
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.Utility\obj\Debug\netcoreapp3.1\Laboratory.Utility.csprojAssemblyReference.cache

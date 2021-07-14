@@ -1,6 +1,7 @@
 ﻿using Laboratory.Shared.ViewModels;
 using Laboratory.UI.HttpHelper;
 using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
 using PdfSharp.Pdf;
 using System;
 using System.Collections.Generic;
@@ -26,10 +27,10 @@ namespace Laboratory.UI.Views
     /// </summary>
     public partial class flowDocument : Window
     {
-        private int currentYposition_valuese = 250;
+        private int currentYposition_valuese = 260;
         private int currentYposition_CategroryRectangle = 240;
         private int currentYposition_CategroryName = 255;
-        private int currentYposition_TableHeader = 275;
+        private int currentYposition_TableHeader = 230;
         private bool newPage = false;
         private int numberOfItemsPerPage = 0;
         private readonly int _patientId;
@@ -61,20 +62,20 @@ namespace Laboratory.UI.Views
             for (int i = 0; i < patientTests.Count; i++)
             {
                 numberOfItemsPerPage += 1;
-                if (numberOfItemsPerPage <= 10)
+                if (currentYposition_valuese >= 700 && newPage == false)
                 {
-                    if (numberOfItemsPerPage == 10)
-                    {
-                        newPage = true;
-                        numberOfItemsPerPage = 0;
-                        page = document.AddPage();
-                        gfx = XGraphics.FromPdfPage(page);
-                        GenerateDocumentHeader();
-                        currentYposition_valuese = 250;
-                        currentYposition_CategroryRectangle = 240;
-                        currentYposition_CategroryName = 255;
-                        currentYposition_TableHeader = 275;
-                    }
+                    newPage = true;
+                    numberOfItemsPerPage = 0;
+                    page = document.AddPage();
+                    gfx = XGraphics.FromPdfPage(page);
+                    currentYposition_TableHeader = 230;
+                    GenerateDocumentHeader();
+                    currentYposition_valuese = 260;
+                    currentYposition_CategroryRectangle = 240;
+                    currentYposition_CategroryName = 255;
+                }
+
+         
                     if (patientTests[i].Test.Category.Name != category || newPage == true)
                         {
                             category = patientTests[i].Test.Category.Name;
@@ -89,14 +90,9 @@ namespace Laboratory.UI.Views
                         {
                             gfx.DrawString(patientTests[i].Test.Category.Name, new XFont("Arial", 15, XFontStyle.Regular), XBrushes.White, new XPoint(270, currentYposition_CategroryName));
                         }
-                        gfx.DrawString("Name", new XFont("Arial", 13, XFontStyle.Regular), XBrushes.Black, new XPoint(100, currentYposition_TableHeader));
-                            gfx.DrawString("Category", new XFont("Arial", 13, XFontStyle.Regular), XBrushes.Black, new XPoint(190, currentYposition_TableHeader));
-                            gfx.DrawString("Range", new XFont("Arial", 13, XFontStyle.Regular), XBrushes.Black, new XPoint(280, currentYposition_TableHeader));
-                            gfx.DrawString("Result", new XFont("Arial", 13, XFontStyle.Regular), XBrushes.Black, new XPoint(370, currentYposition_TableHeader));
-                            gfx.DrawString("Unit", new XFont("Arial", 13, XFontStyle.Regular), XBrushes.Black, new XPoint(460, currentYposition_TableHeader));
 
                             newPage = false;
-                            currentYposition_valuese += 50;
+                            currentYposition_valuese += 20;
                         }
                     Task<List<TestRangeViewModel>> Ranges = TestRangeHelper.GetTestRangesAsync(patientTests[i].TestId);
                     List<TestRangeViewModel> testRanges = Ranges.Result;
@@ -109,15 +105,27 @@ namespace Laboratory.UI.Views
                         }
                     }
                     gfx.DrawString(patientTests[i].Test.Name, new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(100, currentYposition_valuese));
-                    gfx.DrawString(patientTests[i].Test.Category.Name, new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(190, currentYposition_valuese));
-                    gfx.DrawString($"{range.LowFrom} {range.HighFrom}", new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(280, currentYposition_valuese));
-                    gfx.DrawString("12", new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(380, currentYposition_valuese));
-                    gfx.DrawString("L", new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(470, currentYposition_valuese));
-                    currentYposition_valuese += 30;
-                    currentYposition_CategroryRectangle = currentYposition_valuese - 20;
-                    currentYposition_CategroryName = currentYposition_valuese - 5;
-                    currentYposition_TableHeader = currentYposition_valuese + 20;
-                }
+                    gfx.DrawString("12", new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(190, currentYposition_valuese));
+                    gfx.DrawString($"{range.LowFrom} - {range.HighFrom}", new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(280, currentYposition_valuese));
+                    gfx.DrawString("L", new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XPoint(380, currentYposition_valuese));
+                    XTextFormatter tf = new XTextFormatter(gfx);
+                    tf.DrawString(patientTests[i].Test.Note, new XFont("Arial", 11, XFontStyle.Regular), XBrushes.Black, new XRect(450, currentYposition_valuese - 10, 100, 100));
+                    if (patientTests[i].Test.Note != "")
+                    {
+                        currentYposition_valuese += 50;
+                        currentYposition_CategroryRectangle = currentYposition_valuese - 20;
+                        currentYposition_CategroryName = currentYposition_valuese - 5;
+                    }
+                    else
+                    {
+                        currentYposition_valuese += 30;
+                        currentYposition_CategroryRectangle = currentYposition_valuese - 20;
+                        currentYposition_CategroryName = currentYposition_valuese - 5;
+                        currentYposition_TableHeader = currentYposition_valuese + 20;
+                    }
+
+
+                
 
             }
             document.Save("C:\\Users\\Hadi\\Downloads\\Documents\\test.pdf");
@@ -160,6 +168,12 @@ namespace Laboratory.UI.Views
 
             brush = new XSolidBrush(XColor.FromArgb(71, 74, 70));
             gfx.DrawString("Tests Report", new XFont("Britannic Bold", 17, XFontStyle.Regular), brush, new XPoint(250, 200));
+
+            gfx.DrawString("Name", new XFont("Arial", 13, XFontStyle.Bold), XBrushes.Black, new XPoint(100, currentYposition_TableHeader));
+            gfx.DrawString("Result", new XFont("Arial", 13, XFontStyle.Bold), XBrushes.Black, new XPoint(190, currentYposition_TableHeader));
+            gfx.DrawString("Range", new XFont("Arial", 13, XFontStyle.Bold), XBrushes.Black, new XPoint(280, currentYposition_TableHeader));
+            gfx.DrawString("Unit", new XFont("Arial", 13, XFontStyle.Bold), XBrushes.Black, new XPoint(370, currentYposition_TableHeader));
+            gfx.DrawString("Note", new XFont("Arial", 13, XFontStyle.Bold), XBrushes.Black, new XPoint(450, currentYposition_TableHeader));
 
             snoColumnVal = new XRect(60, 750, 485, 3);
             brush = new XSolidBrush(XColor.FromArgb(0, 4, 74));

@@ -5860,24 +5860,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hadi\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Hadi\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.API\\Laboratory.API.csproj",
+      "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.API\\Laboratory.API.csproj",
       "projectName": "Laboratory.API",
-      "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.API\\Laboratory.API.csproj",
+      "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.API\\Laboratory.API.csproj",
       "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.API\\obj\\",
+      "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.API\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
         "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5891,11 +5886,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj": {
-              "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj"
+            "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj": {
+              "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj"
             },
-            "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
-              "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj"
+            "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
+              "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj"
             }
           }
         }
@@ -5943,7 +5938,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
