@@ -27,12 +27,19 @@ namespace Laboratory.UI.Views
             InitializeComponent();
             GetTestsAsync();
             GetCategory();
+            GetUnits();
         }
 
         private void GetCategory()
         {
             List<CategoryViewModel> categories = CategoryHelper.GetCategoriesAsync().Result;
             comboCategory.ItemsSource = categories;
+        }
+
+        private void GetUnits()
+        {
+            List<UnitViewModel> units = UnitHelper.GetUnitsAsync().Result;
+            comboUnits.ItemsSource = units;
         }
         public void GetTestsAsync()
         {
@@ -51,6 +58,7 @@ namespace Laboratory.UI.Views
                     CategoryId = item.CategoryId,
                     Category = item.Category,
                     CategoryName = item.Category.Name,
+                    UnitName = item.Unit.Name,
                     Note = item.Note
                 });
             }
@@ -72,12 +80,14 @@ namespace Laboratory.UI.Views
         private async Task Add_Test()
         {
             var category = (CategoryViewModel)comboCategory.SelectedItem;
+            var unit = (UnitViewModel)comboUnits.SelectedItem;
 
             TestViewModel test = new TestViewModel();
             test.Code = txtCode.Text;
             test.Name = txtTestName.Text;
             test.AppearName = txtAppearingName.Text;
             test.CategoryId = category.Id;
+            test.UnitId = unit.Id;
             test.Price = Convert.ToInt32(txtPrice.Text);
             test.Note = txtNote.Text;
             await TestHelper.AddOrUpdateTestAsync(test);
@@ -88,11 +98,14 @@ namespace Laboratory.UI.Views
         private async Task Update_Patient()
         {
             var category = (CategoryViewModel)comboCategory.SelectedItem;
+            var unit = (UnitViewModel)comboUnits.SelectedItem;
+
             var test = (TestViewModel)testsGrid.SelectedItem;
             test.Code = txtCode.Text;
             test.Name = txtTestName.Text;
             test.AppearName = txtAppearingName.Text;
             test.CategoryId = category.Id;
+            test.UnitId = unit.Id;
             test.Price = Convert.ToInt32(txtPrice.Text);
             test.Note = txtNote.Text;
             await TestHelper.AddOrUpdateTestAsync(test);
@@ -103,6 +116,7 @@ namespace Laboratory.UI.Views
         public void ClearInput()
         {
             comboCategory.SelectedIndex = -1;
+            comboUnits.SelectedIndex = -1;
             txtPrice.Clear();
             txtNote.Clear();
             txtCode.Clear();
@@ -117,6 +131,7 @@ namespace Laboratory.UI.Views
             if (test != null)
             {
                 comboCategory.Text = test.Category.Name;
+                comboUnits.Text = test.Unit.Name;
                 txtCode.Text = test.Code;
                 txtAppearingName.Text = test.AppearName;
                 txtTestName.Text = test.Name;

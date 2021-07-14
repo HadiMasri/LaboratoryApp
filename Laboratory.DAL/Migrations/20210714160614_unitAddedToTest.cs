@@ -2,7 +2,7 @@
 
 namespace Laboratory.DAL.Migrations
 {
-    public partial class newMigration : Migration
+    public partial class unitAddedToTest : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -79,26 +79,16 @@ namespace Laboratory.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Tests",
+                name: "Units",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Price = table.Column<double>(type: "float", maxLength: 4, nullable: false),
-                    AppearName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    CategoryId = table.Column<int>(type: "int", nullable: false),
-                    Note = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    Name = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tests", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Tests_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
-                        principalColumn: "Id");
+                    table.PrimaryKey("PK_Units", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -136,30 +126,31 @@ namespace Laboratory.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TestRanges",
+                name: "Tests",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FromAge = table.Column<int>(type: "int", maxLength: 4, nullable: false),
-                    ToAge = table.Column<int>(type: "int", maxLength: 4, nullable: false),
-                    LowFrom = table.Column<int>(type: "int", maxLength: 10, nullable: false),
-                    HighFrom = table.Column<int>(type: "int", maxLength: 10, nullable: false),
-                    TestId = table.Column<int>(type: "int", nullable: false),
-                    GenderId = table.Column<int>(type: "int", nullable: false)
+                    Code = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Price = table.Column<double>(type: "float", maxLength: 4, nullable: false),
+                    AppearName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    CategoryId = table.Column<int>(type: "int", nullable: false),
+                    UnitId = table.Column<int>(type: "int", nullable: false),
+                    Note = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_TestRanges", x => x.Id);
+                    table.PrimaryKey("PK_Tests", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TestRanges_Gender_GenderId",
-                        column: x => x.GenderId,
-                        principalTable: "Gender",
+                        name: "FK_Tests_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_TestRanges_Tests_TestId",
-                        column: x => x.TestId,
-                        principalTable: "Tests",
+                        name: "FK_Tests_Units_UnitId",
+                        column: x => x.UnitId,
+                        principalTable: "Units",
                         principalColumn: "Id");
                 });
 
@@ -188,6 +179,34 @@ namespace Laboratory.DAL.Migrations
                         principalTable: "Tests",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TestRanges",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    FromAge = table.Column<int>(type: "int", maxLength: 4, nullable: false),
+                    ToAge = table.Column<int>(type: "int", maxLength: 4, nullable: false),
+                    LowFrom = table.Column<int>(type: "int", maxLength: 10, nullable: false),
+                    HighFrom = table.Column<int>(type: "int", maxLength: 10, nullable: false),
+                    TestId = table.Column<int>(type: "int", nullable: false),
+                    GenderId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TestRanges", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_TestRanges_Gender_GenderId",
+                        column: x => x.GenderId,
+                        principalTable: "Gender",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_TestRanges_Tests_TestId",
+                        column: x => x.TestId,
+                        principalTable: "Tests",
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
@@ -221,8 +240,27 @@ namespace Laboratory.DAL.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Mr" },
-                    { 2, "Mrs" }
+                    { 2, "Mrs" },
+                    { 1, "Mr" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Units",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "mg/l" },
+                    { 2, "mg/dl" },
+                    { 3, "mmole/l" },
+                    { 4, "pg/l" },
+                    { 5, "ug/l" },
+                    { 6, "u/l" },
+                    { 7, "u/dl" },
+                    { 8, "%" },
+                    { 9, "min" },
+                    { 10, "sec" },
+                    { 11, "L" },
+                    { 12, "pg/ml" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -259,6 +297,11 @@ namespace Laboratory.DAL.Migrations
                 name: "IX_Tests_CategoryId",
                 table: "Tests",
                 column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Tests_UnitId",
+                table: "Tests",
+                column: "UnitId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -289,6 +332,9 @@ namespace Laboratory.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "Categories");
+
+            migrationBuilder.DropTable(
+                name: "Units");
         }
     }
 }

@@ -20,6 +20,13 @@
                 </ItemsPanelTemplate>
             </ComboBox.ItemsPanel>
         </ComboBox>
+        <ComboBox x:Name="comboUnits" SelectedValue="{Binding UnitId}" DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Units" Margin="0,100,100,400" Height="43" VerticalAlignment="Top" Width="120" ItemsSource="{Binding LongListToTestComboVirtualization}" Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <ComboBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <VirtualizingStackPanel />
+                </ItemsPanelTemplate>
+            </ComboBox.ItemsPanel>
+        </ComboBox>
         <TextBox x:Name="txtPrice"  Style="{StaticResource MaterialDesignFloatingHintTextBox}"  Margin="0,50,100,400" materialDesign:HintAssist.Hint="Price:" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Stretch" Width="120" Height="43"></TextBox>
         <TextBox x:Name="txtNote" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top" Height="100" Width="400" AcceptsReturn="True"
         TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Margin="550,50,0,0" materialDesign:HintAssist.Hint="Notes:" />
@@ -123,6 +130,13 @@
                     </DataGridTextColumn.ElementStyle>
                 </DataGridTextColumn>
                 <DataGridTextColumn  Header="Price" Binding="{Binding Price}" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Unit" Binding="{Binding UnitName}" Width="*"    >
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Center" />

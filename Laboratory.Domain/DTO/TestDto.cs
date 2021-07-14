@@ -10,6 +10,8 @@
         public string AppearName { get; set; }
         public int CategoryId { get; set; }
         public CategoryDto Category { get; set; }
+        public int UnitId { get; set; }
+        public UnitDto Unit { get; set; }
         public string Note { get; set; }
 
     }

@@ -11,6 +11,8 @@ namespace Laboratory.DAL.Entities
         public string AppearName { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
+        public int UnitId { get; set; }
+        public Unit Unit { get; set; }
         public string Note { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace Laboratory.DAL
         public DbSet<Adress> Adress { get; set; }
         public DbSet<Gender> Gender { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Unit> Units { get; set; }
         public DbSet<Labo> Labos { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Patient_Test> Patient_Tests { get; set; }
@@ -27,6 +28,7 @@ namespace Laboratory.DAL
             modelBuilder.ApplyConfiguration(new Labo_Conf());
             modelBuilder.ApplyConfiguration(new Patient_Conf());
             modelBuilder.ApplyConfiguration(new Test_Conf());
+            modelBuilder.ApplyConfiguration(new Unit_Conf());
             modelBuilder.ApplyConfiguration(new TestRange_Conf());
 
             modelBuilder.seed();

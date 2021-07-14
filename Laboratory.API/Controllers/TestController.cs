@@ -24,7 +24,7 @@ namespace Laboratory.API.Controllers
         {
             try
             {
-                var allObj = _unitOfWork.Test.GetAll(t => t.Category);
+                var allObj = _unitOfWork.Test.GetAll(t => t.Category, u => u.Unit);
                 return allObj.ToList();
             }
             catch (Exception)

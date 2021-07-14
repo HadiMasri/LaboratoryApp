@@ -32,6 +32,68 @@ namespace Laboratory.DAL.Extentions
                     Name = "Female"
                 }
             );
+            modelBuilder.Entity<Unit>().HasData(
+                new Unit
+                {
+                    Id = 1,
+                    Name = "mg/l"
+                },
+                new Unit
+                {
+                    Id = 2,
+                    Name = "mg/dl"
+                },
+                new Unit
+                {
+                    Id = 3,
+                    Name = "mmole/l"
+                },
+                new Unit
+                {
+                    Id = 4,
+                    Name = "pg/l"
+                },
+                new Unit
+                {
+                    Id = 5,
+                    Name = "ug/l"
+                },
+                new Unit
+                {
+                    Id = 6,
+                    Name = "u/l"
+                },
+                new Unit
+                {
+                    Id = 7,
+                    Name = "u/dl"
+                },
+                new Unit
+                {
+                    Id = 8,
+                    Name = "%"
+                },
+                new Unit
+                {
+                    Id = 9,
+                    Name = "min"
+                },
+                new Unit
+                {
+                    Id = 10,
+                    Name = "sec"
+                },
+                new Unit
+                {
+                    Id = 11,
+                    Name = "L"
+                },
+                new Unit
+                {
+                    Id = 12,
+                    Name = "pg/ml"
+                }
+            );
             modelBuilder.Entity<Category>().HasData(
 
                 new Category

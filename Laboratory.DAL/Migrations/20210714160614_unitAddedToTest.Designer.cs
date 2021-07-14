@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Laboratory.DAL.Migrations
 {
     [DbContext(typeof(LaboratoryDbContext))]
-    [Migration("20210711161739_newMigration")]
-    partial class newMigration
+    [Migration("20210714160614_unitAddedToTest")]
+    partial class unitAddedToTest
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -304,9 +304,14 @@ namespace Laboratory.DAL.Migrations
                         .HasMaxLength(4)
                         .HasColumnType("float");
 
+                    b.Property<int>("UnitId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("UnitId");
 
                     b.ToTable("Tests");
                 });
@@ -376,6 +381,85 @@ namespace Laboratory.DAL.Migrations
                         });
                 });
 
+            modelBuilder.Entity("Laboratory.DAL.Entities.Unit", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Units");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "mg/l"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "mg/dl"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "mmole/l"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "pg/l"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "ug/l"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "u/l"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Name = "u/dl"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Name = "%"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Name = "min"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            Name = "sec"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            Name = "L"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Name = "pg/ml"
+                        });
+                });
+
             modelBuilder.Entity("Laboratory.DAL.Entities.Patient", b =>
                 {
                     b.HasOne("Laboratory.DAL.Entities.Gender", "Gender")
@@ -422,7 +506,15 @@ namespace Laboratory.DAL.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("Laboratory.DAL.Entities.Unit", "Unit")
+                        .WithMany()
+                        .HasForeignKey("UnitId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
                     b.Navigation("Category");
+
+                    b.Navigation("Unit");
                 });
 
             modelBuilder.Entity("Laboratory.DAL.Entities.TestRange", b =>

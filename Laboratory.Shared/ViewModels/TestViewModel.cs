@@ -14,6 +14,9 @@
         public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public CategoryViewModel Category { get; set; }
+        public int UnitId { get; set; }
+        public string UnitName { get; set; }
+        public UnitViewModel Unit { get; set; }
         public string Note { get; set; }
     }
 }
