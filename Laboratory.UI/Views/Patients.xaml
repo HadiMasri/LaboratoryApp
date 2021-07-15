@@ -12,15 +12,52 @@
                     ImageSource="../Assets/tgBtn_default.png"/>
         <ImageBrush x:Key="tb_mouse_click"
                     ImageSource="../Assets/closeMenu.png"/>
-        
-        
+
+        <Style x:Key="GBStyled" TargetType="GroupBox">
+            <!-- These 2 setters make the GroupBox less blurry -->
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <!-- Default Background colour -->
+            <Setter Property="Background" Value="White"/>
+            <!-- Template of GroupBox -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="GroupBox">
+                        <Grid>
+                            <Grid.Resources>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" CornerRadius="5,5,0,0" BorderThickness="1" BorderBrush="#24426E" Background="#24426E">
+                                <!-- FontSize of the header is changed via the Templates "Tag" property -->
+                                <Label Foreground="White" FontSize="14" HorizontalAlignment="Center" FontWeight="Bold">
+                                    <!-- DropShadow makes the label standout from the background -->
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="0" BlurRadius="3" />
+                                    </Label.Effect>
+                                    <ContentPresenter Margin="0" ContentSource="Header" RecognizesAccessKey="True"/>
+                                </Label>
+                            </Border>
+                            <Border Grid.Row="1" CornerRadius="0,0,5,5" BorderThickness="1,0,1,1" BorderBrush="#24426E" Background="{TemplateBinding Background}">
+                                <ContentPresenter Margin="0" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid     RenderTransformOrigin="0.5,0.52"  >
 
         <Grid  x:Name="mainGrid" />
-        <GroupBox x:Name="patientGroupBox"  materialDesign:ColorZoneAssist.Mode="Custom" Background="#fcfcfc" materialDesign:ColorZoneAssist.Background="#24426E" materialDesign:ColorZoneAssist.Foreground="White"  Header="New Patient" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,20,0,0" Height="250" Width="758" >
+        <GroupBox Style="{StaticResource GBStyled}"  x:Name="patientGroupBox" BorderThickness="0" materialDesign:ColorZoneAssist.Mode="Custom" Background="#fcfcfc" materialDesign:ColorZoneAssist.Background="#24426E" materialDesign:ColorZoneAssist.Foreground="White"  Header="New Patient" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="0,20,0,0" Height="250" Width="758" >
+            <Border CornerRadius="0,0,5,5" Background="#f2f2f2" BorderBrush="Transparent" BorderThickness="0" Height="60" Margin="0,160,0,0" >
+            <StackPanel  Background="#f2f2f2" Width="758" Height="60" Margin="-30,137,-30,-18" />
+            </Border>
         </GroupBox>
-            <ComboBox x:Name="comboTitle" SelectedValue="{Binding TitleId}"  DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Title" Margin="-600,50,0,500" VerticalAlignment="Top" Height="43" Width="120"  Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+        <ComboBox x:Name="comboTitle" SelectedValue="{Binding TitleId}"  DisplayMemberPath="Name" materialDesign:HintAssist.Hint="Title" Margin="-600,50,0,500" VerticalAlignment="Top" Height="43" Width="120"  Style="{StaticResource MaterialDesignFloatingHintComboBox}">
             <ComboBox.ItemsPanel>
                 <ItemsPanelTemplate>
                     <VirtualizingStackPanel />
@@ -76,7 +113,7 @@
                             <Setter Property="IsEnabled" Value="False"/>
                         </DataTrigger>
                     </Style.Triggers>
-                </Style> 
+                </Style>
             </Button.Style>
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
@@ -105,17 +142,17 @@
                   Height="700" Width="250" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
 
             <DataGrid.Resources>
-                    <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
-                        <Setter Property="Background" Value="#24426E" />
-                        <Setter Property="HorizontalContentAlignment" Value="Left" />
-                        <Setter Property="Foreground" Value="White" />
-                        <Setter Property="BorderThickness" Value="0" />
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#24426E" />
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="BorderThickness" Value="0" />
                 </Style>
-                
-                </DataGrid.Resources>
+
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="Nr" Binding="{Binding Nr}"     Width="50" >
-   
+
                     <DataGridTextColumn.ElementStyle>
                         <Style TargetType="TextBlock">
                             <Setter Property="HorizontalAlignment" Value="Left" />
@@ -128,7 +165,7 @@
                             <Setter Property="HorizontalAlignment" Value="Left" />
                         </Style>
                     </DataGridTextColumn.ElementStyle>
- 
+
                 </DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -140,7 +177,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
-            
+
         </DataGrid>
         <DataGrid x:Name="testsGrid" MouseDoubleClick="add_Test_To_Patient" ItemsSource="{Binding Items2}" IsReadOnly="True" VerticalAlignment="Top" Margin="1150 80 0 0" Height="700" Width="250" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended"  >
             <DataGrid.Resources>
