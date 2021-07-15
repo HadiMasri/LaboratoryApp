@@ -130,7 +130,7 @@
                     HorizontalAlignment="Left"
                   
                     Panel.ZIndex="1000"
-                    Background="#090D40" Width="65">
+                    Background="#010221" Width="65">
 
                     <StackPanel x:Name="st_pnl">
 
@@ -201,7 +201,7 @@
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
                                                 From="230" To="65"
-                                                Duration="0:0:0.2">
+                                                Duration="0:0:0.3">
 
                                                 </DoubleAnimation>
 

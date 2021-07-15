@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj": {}
+    "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj": {
+    "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj",
         "projectName": "Laboratory.Shared",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj",
+        "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj",
         "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\obj\\",
+        "outputPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Shared\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -54,21 +58,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj": {
+    "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
+        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
         "projectName": "Laboratory.UI",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
+        "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
         "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\obj\\",
+        "outputPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.UI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,11 +90,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj": {
-                "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj"
+              "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj": {
+                "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj"
               },
-              "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj": {
-                "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj"
+              "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj": {
+                "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj"
               }
             }
           }
@@ -140,21 +148,25 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj": {
+    "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj",
+        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj",
         "projectName": "Laboratory.Utility",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj",
+        "projectPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj",
         "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\obj\\",
+        "outputPath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.Utility\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -194,7 +206,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
         }
       }
     }

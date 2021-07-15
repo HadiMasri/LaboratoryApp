@@ -137,7 +137,7 @@
 
 
 
-
+        
         <DataGrid    x:Name="patientsGrid" SelectionChanged="patientsGrid_SelectionChanged" SelectedItem="{Binding SelectedItem}" IsReadOnly="True" VerticalAlignment="Top" Margin="-1150 80 0 0"
                   Height="700" Width="250" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
 
@@ -148,7 +148,7 @@
                     <Setter Property="Foreground" Value="White" />
                     <Setter Property="BorderThickness" Value="0" />
                 </Style>
-
+      
             </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn  Header="Nr" Binding="{Binding Nr}"     Width="50" >
