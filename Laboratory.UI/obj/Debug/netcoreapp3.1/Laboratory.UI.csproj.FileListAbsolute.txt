@@ -100,3 +100,4 @@ C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Labora
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.dll
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.pdb
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.genruntimeconfig.cache
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\bin\Debug\netcoreapp3.1\Prism.dll

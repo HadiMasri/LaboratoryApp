@@ -13,6 +13,7 @@
           "MaterialDesignThemes": "4.1.0",
           "Newtonsoft.Json": "13.0.1",
           "PDFsharp": "1.50.5147",
+          "Prism.Core": "8.1.97",
           "Syncfusion.Pdf.Wpf": "19.2.0.44",
           "Syncfusion.PdfViewer.WPF": "19.2.0.44"
         },
@@ -64,6 +65,14 @@
           },
           "lib/net20/de/PdfSharp.resources.dll": {
             "locale": "de"
+          }
+        }
+      },
+      "Prism.Core/8.1.97": {
+        "runtime": {
+          "lib/netstandard2.0/Prism.dll": {
+            "assemblyVersion": "8.1.97.5141",
+            "fileVersion": "8.1.97.5141"
           }
         }
       },
@@ -165,6 +174,13 @@
       "sha512": "sha512-vr5KBIqcXu2hqZ43UTwPR+jqHgMrT5tsPtJvEF+mORKoBNMh3bRWgAwic0U1sT2IVb4PR5m0GyQxnmCz8jBHWg==",
       "path": "pdfsharp/1.50.5147",
       "hashPath": "pdfsharp.1.50.5147.nupkg.sha512"
+    },
+    "Prism.Core/8.1.97": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EP5zrvWddw3eSq25Y7hHnDYdmLZEC2Z/gMrvmHzUuLbitmA1UaS7wQUlSwNr9Km8lzJNCvytFnaGBEFukHgoHg==",
+      "path": "prism.core/8.1.97",
+      "hashPath": "prism.core.8.1.97.nupkg.sha512"
     },
     "Syncfusion.Compression.Base/19.2.0.44": {
       "type": "package",

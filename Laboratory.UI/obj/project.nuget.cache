@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "UjotwiApPhbi8lJ68UwlDqVydualSKjKgNVc+lSDJ+pDor0roRYVbvxe6QbCgmrQ9nPwHdHXJPdKW5t39GJt6g==",
+  "dgSpecHash": "m3dp9/DmbnO1VAsFULYojkD0RUd4aPsEeqsYJNHZkO2ZUFHeJDFcb8byMRYTNEfup1E4NX/t47K4SwBHFHl/bA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hadi\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
+  "projectFilePath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hadi\\.nuget\\packages\\materialdesigncolors\\2.0.1\\materialdesigncolors.2.0.1.nupkg.sha512",
     "C:\\Users\\Hadi\\.nuget\\packages\\materialdesignthemes\\4.1.0\\materialdesignthemes.4.1.0.nupkg.sha512",
     "C:\\Users\\Hadi\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Hadi\\.nuget\\packages\\pdfsharp\\1.50.5147\\pdfsharp.1.50.5147.nupkg.sha512",
+    "C:\\Users\\Hadi\\.nuget\\packages\\prism.core\\8.1.97\\prism.core.8.1.97.nupkg.sha512",
     "C:\\Users\\Hadi\\.nuget\\packages\\syncfusion.compression.base\\19.2.0.44\\syncfusion.compression.base.19.2.0.44.nupkg.sha512",
     "C:\\Users\\Hadi\\.nuget\\packages\\syncfusion.licensing\\19.2.0.44\\syncfusion.licensing.19.2.0.44.nupkg.sha512",
     "C:\\Users\\Hadi\\.nuget\\packages\\syncfusion.pdf.wpf\\19.2.0.44\\syncfusion.pdf.wpf.19.2.0.44.nupkg.sha512",

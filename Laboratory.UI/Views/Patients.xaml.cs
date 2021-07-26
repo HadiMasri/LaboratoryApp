@@ -34,6 +34,7 @@ namespace Laboratory.UI.Views
             GetTitles();
             GetPatientsAsync();
             GetTestsAsync();
+
         }
 
         private void GetGenders()
@@ -139,6 +140,7 @@ namespace Laboratory.UI.Views
                     Id = item.Id,
                     Code = item.Code,
                     AppearName = item.AppearName,
+                    Price = item.Price
                 });
             }
         }
@@ -206,8 +208,8 @@ namespace Laboratory.UI.Views
                 txtRoomNr.Text = patient.RoomNr;
                 txtPhoneNr.Text = patient.PhoneNr;
                 txtDiagnosis.Text = patient.Diagnosis;
+                GetPatientTestsAsync(patient.Id);
             }
-            GetPatientTestsAsync(patient.Id);
         }
         public void GetPatientTestsAsync(int patientId)
         {
@@ -215,6 +217,7 @@ namespace Laboratory.UI.Views
             List<Patient_TestViewModel> patientTests = patientTestsTask.Result;
             userTestsGrid.Items.Refresh();
             List<TestViewModel> patientTest = new List<TestViewModel>();
+            double totalPrice = 0;
             foreach (var item in patientTests)
             {
                 Task<List<TestRangeViewModel>> Ranges = TestRangeHelper.GetTestRangesAsync(item.TestId);
@@ -234,7 +237,6 @@ namespace Laboratory.UI.Views
                     PatientId = item.PatientId,
                     PatientTestId = item.Id,
                     Name = item.Test.Name,
-                    AppearName = item.Test.AppearName,
                     Range = $"{range.LowFrom} - {range.HighFrom}",
                     Code = item.Test.Code,
                     Result = item.Result,
@@ -242,6 +244,8 @@ namespace Laboratory.UI.Views
                     CategoryName = item.Test.Category.Name,
                     Note = item.Test.Note,
                 }) ;
+                totalPrice += item.Test.Price;
+                txtTotal.Text = totalPrice.ToString();
             }
             userTestsGrid.ItemsSource = patientTest;
         }
@@ -256,6 +260,9 @@ namespace Laboratory.UI.Views
                 patientTest.PatientId = patient.Id;
                 await PatientTestHelper.AddOrUpdatePatientTestAsync(patientTest);
                 GetPatientTestsAsync(patient.Id);
+                var totalPrice = Convert.ToInt32(txtTotal.Text) + test.Price;
+                txtTotal.Clear();
+                txtTotal.Text = totalPrice.ToString();
             }
             else
             {

@@ -26,17 +26,15 @@ namespace Laboratory.UI.Views
             InitializeComponent();
             if (childWindow == SD.Patients)
             {
-                StackPanelMain.Children.Add(new Patients());
+                mainGrid.Children.Add(new Patients());
             }
             else if (childWindow == SD.Tests)
             {
-                StackPanelMain.Children.Add(new Tests());
+                mainGrid.Children.Add(new Tests());
 
             }
-
         }
 
-        
         private void MainPanel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             Tg_Btn.IsChecked = false;
@@ -44,12 +42,44 @@ namespace Laboratory.UI.Views
         }
         private void Tg_Btn_Unchecked(object sender, RoutedEventArgs e)
         {
-            StackPanelMain.Opacity = 1;
+            mainGrid.Opacity = 1;
         }
 
         private void Tg_Btn_Checked(object sender, RoutedEventArgs e)
         {
-            StackPanelMain.Opacity = 1;
+            mainGrid.Opacity = 1;
+        }
+
+ 
+
+
+
+        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                ShowStackPanel.Begin();
+                Tg_Btn.IsChecked = true;
+            }
+            else
+            {
+                mainGrid.Children.Clear();
+                mainGrid.Children.Add(new Patients());
+            }
+        }
+
+        private void ListViewItem_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                ShowStackPanel.Begin();
+                Tg_Btn.IsChecked = true;
+            }
+            else
+            {
+                mainGrid.Children.Clear();
+                mainGrid.Children.Add(new Tests());
+            }
         }
     }
 }

@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\
 Laboratory.UI
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.UI\App.xaml
-8-1181294018
+C:\Users\Hadi\Desktop\Laboratory\LaboratoryApp\Laboratory.UI\App.xaml
+8733521575
 
-20-1425441329
-211-1828538245
+201541252108
+2121122878388
 Views\ConifrmationDialog.xaml;Views\flowDocument.xaml;Views\MainMenu.xaml;Views\MainWindow.xaml;Views\Patients.xaml;Views\PrintDialog.xaml;Views\TestRange.xaml;Views\Tests.xaml;
 
 False

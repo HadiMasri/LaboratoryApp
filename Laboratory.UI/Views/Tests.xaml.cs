@@ -59,6 +59,7 @@ namespace Laboratory.UI.Views
                     Category = item.Category,
                     CategoryName = item.Category.Name,
                     UnitName = item.Unit.Name,
+                    Unit = item.Unit,
                     Note = item.Note
                 });
             }

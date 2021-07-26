@@ -239,7 +239,8 @@
                             </ToggleButton>
 
                         </Grid>
-
+                        
+                        
 
                         <!-- Menu en submenus weergeven-->
                         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden" Height="auto">
@@ -252,16 +253,33 @@
                                 <Button x:Name="btnLogOut" Content="{Binding Logout, Converter={StaticResource keyNewLineConverter}, Mode=TwoWay}"  Foreground="White"  Background="Transparent" BorderBrush="Transparent" Click="btnLogOut_Click"/>
                             </Grid>
                         </Border>-->
-          
+                        <ListView  ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Arial" Foreground="White" FontSize="20" BorderBrush="Transparent" Background="Transparent">
+                    
+                           
+                            <ListViewItem PreviewMouseLeftButtonDown="ListViewItem_PreviewMouseLeftButtonDown"  Height="70" >
+                                <StackPanel  Orientation="Horizontal">
+                                    <Image  Source="../Assets/patient.png" Height="50"  Width="50" />
+                                    <TextBlock Margin="30,10,0,0"  >Patients</TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem PreviewMouseLeftButtonDown="ListViewItem_PreviewMouseLeftButtonDown_1" Height="70" >
+                                <StackPanel  Orientation="Horizontal">
+                                    <Image  Source="../Assets/Test.png" Margin="10,0,0,0" Height="40"  Width="40" />
+                                    <TextBlock Margin="30,10,0,0"  >Tests</TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                        </ListView>
                     </StackPanel>
 
                 </Grid>
 
-                <StackPanel Background="#e8e3e3" Grid.Column="1"  x:Name="StackPanelMain" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" />
-
+                <Grid Background="#e8e3e3" Grid.Column="1"  x:Name="mainGrid" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"  Margin="0" >
+      
+                </Grid>
+          
             </Grid>
 
         </Grid>
-
+      
     </Grid>
 </Window>

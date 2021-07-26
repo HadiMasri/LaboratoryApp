@@ -29,10 +29,10 @@ namespace Laboratory.UI.Views
         {
             var mainMEnu = new MainMenu(SD.Patients);
 
-            
             mainMEnu.Owner = this;
             this.Hide();
             mainMEnu.ShowDialog();
+            
         }
 
         private void Open_Tests_Dialog(object sender, RoutedEventArgs e)
