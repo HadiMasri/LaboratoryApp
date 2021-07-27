@@ -9,6 +9,7 @@ namespace Laboratory.DAL.UnitOfWork
         ITitleRepository Title { get; }
         IGenderRepository Gender { get; }
         ICategoryRepository Category { get; }
+        IDiscountTypeRepository DiscountType { get; }
         IUnitRepository Unit { get; }
         ITestRepository Test { get; }
         ITestRangeRepository TestRange { get; }

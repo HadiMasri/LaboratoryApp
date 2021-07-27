@@ -32,6 +32,18 @@ namespace Laboratory.DAL.Extentions
                     Name = "Female"
                 }
             );
+            modelBuilder.Entity<DiscountType>().HasData(
+                new Gender
+                {
+                    Id = 1,
+                    Name = "Precentage"
+                },
+                new Gender
+                {
+                    Id = 2,
+                    Name = "Amount"
+                }
+            );
             modelBuilder.Entity<Unit>().HasData(
                 new Unit
                 {

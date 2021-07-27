@@ -20,6 +20,8 @@ namespace Laboratory.DAL
         public DbSet<Test> Tests { get; set; }
         public DbSet<TestRange> TestRanges { get; set; }
         public DbSet<Title> Title { get; set; }
+        public DbSet<DiscountType> DiscountTypes { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -63,7 +63,7 @@ namespace Laboratory.UI.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Laboratory.UI;component/views/flowdocument.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Laboratory.UI;V1.0.0.0;component/views/flowdocument.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\flowDocument.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

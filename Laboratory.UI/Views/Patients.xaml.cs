@@ -27,20 +27,27 @@ namespace Laboratory.UI.Views
     public partial class Patients : UserControl
     {
         int nr = 1;
+
         public Patients()
         {
             InitializeComponent();
             GetGenders();
             GetTitles();
+            GetDiscountType();
             GetPatientsAsync();
             GetTestsAsync();
-
         }
 
         private void GetGenders()
         {
             List<GenderViewModel> genders = GenderHelper.GetGendersAsync().Result;
             comboGender.ItemsSource = genders;
+        }
+
+        private void GetDiscountType()
+        {
+            List<DiscountTypeViewModel> discountTypes = DiscountTypeHelper.GetDiscountTypesAsync().Result;
+            comboDiscount.ItemsSource = discountTypes;
         }
         private void GetTitles()
         {
@@ -246,6 +253,7 @@ namespace Laboratory.UI.Views
                 }) ;
                 totalPrice += item.Test.Price;
                 txtTotal.Text = totalPrice.ToString();
+                txtAmountAfterDiscount.Text = totalPrice.ToString();
             }
             userTestsGrid.ItemsSource = patientTest;
         }
@@ -260,9 +268,8 @@ namespace Laboratory.UI.Views
                 patientTest.PatientId = patient.Id;
                 await PatientTestHelper.AddOrUpdatePatientTestAsync(patientTest);
                 GetPatientTestsAsync(patient.Id);
-                var totalPrice = Convert.ToInt32(txtTotal.Text) + test.Price;
-                txtTotal.Clear();
-                txtTotal.Text = totalPrice.ToString();
+                var totalPrice = Convert.ToDouble(txtTotal.Text) + test.Price;
+                Add_New_Test_Price_To_Total_Price(totalPrice);
             }
             else
             {
@@ -270,7 +277,15 @@ namespace Laboratory.UI.Views
             }
         }
 
-        private async void userTestsGrid_CellEditEnding(object sender, DataGridCellEditEndingEventArgs e)
+        private void Add_New_Test_Price_To_Total_Price(double totalPrice)
+        {
+            txtTotal.Clear();
+            txtAmountAfterDiscount.Clear();
+            txtAmountAfterDiscount.Text = totalPrice.ToString();
+            txtTotal.Text = totalPrice.ToString();
+        }
+
+        private async void Add_Test_Result_To_Patient_Test(object sender, DataGridCellEditEndingEventArgs e)
         {
             var editedTextbox = e.EditingElement as TextBox;
             var updatedResult = editedTextbox.Text;
@@ -284,11 +299,62 @@ namespace Laboratory.UI.Views
             GetPatientTestsAsync(patientTest.PatientId);
         }
 
-        private void print(object sender, RoutedEventArgs e)
+        private void Print(object sender, RoutedEventArgs e)
         {
             var patient = (PatientViewModel)patientsGrid.SelectedItem;
             flowDocument flow = new flowDocument(patient.Id);
             flow.ShowDialog();
         }
+
+
+
+        private void Caluclate_Discount(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                var discount = Convert.ToDouble(txtDiscount.Text);
+                var discountType = (DiscountTypeViewModel)comboDiscount.SelectedItem;
+                var total = Convert.ToDouble(txtTotal.Text);
+                double amountAfterDiscount = 0;
+                if (discount < total)
+                {
+                    if (discountType != null)
+                    {
+                        if (discountType.Name == "Precentage")
+                        {
+                            amountAfterDiscount = total - (total * discount / 100);
+                            txtAmountAfterDiscount.Text = amountAfterDiscount.ToString();
+
+                        }
+                        else if (discountType.Name == "Amount")
+                        {
+                            amountAfterDiscount = total - discount;
+                            txtAmountAfterDiscount.Text = amountAfterDiscount.ToString(); ;
+                        }
+                        var element = sender as UIElement;
+                        if (element != null) element.MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select discount type first");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The discount can not be more than the total amount");
+                }
+            }
+        }
+
+        private void Calculate_Total_Amount_After_Pay(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+               var remainingAmount = Convert.ToDouble(txtAmountAfterDiscount.Text) - Convert.ToDouble(txtPaid.Text);
+                txtRemain.Text = remainingAmount.ToString();
+            }
+        }
+
+
     }
 }
