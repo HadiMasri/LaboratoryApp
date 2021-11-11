@@ -22,3 +22,16 @@ C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Labor
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.dll
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.pdb
 C:\Users\Hadi\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.genruntimeconfig.cache
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\bin\Debug\netcoreapp3.1\Laboratory.DAL.deps.json
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\bin\Debug\netcoreapp3.1\Laboratory.DAL.runtimeconfig.json
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\bin\Debug\netcoreapp3.1\Laboratory.DAL.runtimeconfig.dev.json
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\bin\Debug\netcoreapp3.1\Laboratory.DAL.dll
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\bin\Debug\netcoreapp3.1\Laboratory.DAL.pdb
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.csproj.AssemblyReference.cache
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.AssemblyInfoInputs.cache
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.AssemblyInfo.cs
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.csproj.CoreCompileInputs.cache
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.dll
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.pdb
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.DAL\obj\Debug\netcoreapp3.1\Laboratory.DAL.genruntimeconfig.cache

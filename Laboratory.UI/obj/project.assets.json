@@ -472,19 +472,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Hadi\\.nuget\\packages\\": {}
+    "C:\\Users\\amasri\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
+      "projectUniqueName": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
       "projectName": "Laboratory.UI",
-      "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
-      "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.UI\\obj\\",
+      "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.UI\\Laboratory.UI.csproj",
+      "packagesPath": "C:\\Users\\amasri\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.UI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\amasri\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -498,11 +498,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj": {
-              "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj"
+            "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj": {
+              "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj"
             },
-            "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj": {
-              "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj"
+            "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj": {
+              "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Utility\\Laboratory.Utility.csproj"
             }
           }
         }
@@ -552,6 +552,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[3.1.10, 3.1.10]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[3.1.21, 3.1.21]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[3.1.0, 3.1.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -560,7 +578,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   },

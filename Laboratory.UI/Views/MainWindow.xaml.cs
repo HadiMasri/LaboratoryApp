@@ -42,5 +42,13 @@ namespace Laboratory.UI.Views
             this.Hide();
             mainMEnu.ShowDialog();
         }
+
+        private void Open_Materials_Dialog(object sender, RoutedEventArgs e)
+        {
+            var mainMEnu = new MainMenu(SD.Materials);
+            mainMEnu.Owner = this;
+            this.Hide();
+            mainMEnu.ShowDialog();
+        }
     }
 }

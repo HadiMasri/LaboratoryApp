@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "/jkb4g1i9sDIBu5atpQsO5waMH/p9Y42p77J0L9NAgJZt0XpplAYxY5OXRBdwNuxvXNciAbbGBfYNgeYgFqeDQ==",
+  "dgSpecHash": "AawmXQURGtoA+YNUwBbEuPMlryHWZZkfiPmEnZsqtxzXGDi1NTS+gZ+DTxw4yq+VDPCNtebZyVDhfpqqV09yGw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Shared\\Laboratory.Shared.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amasri\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\amasri\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\amasri\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

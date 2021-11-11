@@ -33,6 +33,11 @@ namespace Laboratory.UI.Views
                 mainGrid.Children.Add(new Tests());
 
             }
+            else if (childWindow == SD.Materials)
+            {
+                mainGrid.Children.Add(new Materials());
+
+            }
         }
 
         private void MainPanel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -54,7 +59,7 @@ namespace Laboratory.UI.Views
 
 
 
-        private void ListViewItem_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Patients_Menu_Clicked(object sender, MouseButtonEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
@@ -68,7 +73,7 @@ namespace Laboratory.UI.Views
             }
         }
 
-        private void ListViewItem_PreviewMouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
+        private void Tests_Menu_Clicked(object sender, MouseButtonEventArgs e)
         {
             if (Tg_Btn.IsChecked == false)
             {
@@ -79,6 +84,19 @@ namespace Laboratory.UI.Views
             {
                 mainGrid.Children.Clear();
                 mainGrid.Children.Add(new Tests());
+            }
+        }
+        private void Meterials_Menu_Clicked(object sender, MouseButtonEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                ShowStackPanel.Begin();
+                Tg_Btn.IsChecked = true;
+            }
+            else
+            {
+                mainGrid.Children.Clear();
+                mainGrid.Children.Add(new Materials());
             }
         }
     }

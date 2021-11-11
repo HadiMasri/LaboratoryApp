@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj": {}
+    "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj": {
+    "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj",
+        "projectUniqueName": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj",
         "projectName": "Laboratory.BLL",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj",
-        "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.BLL\\obj\\",
+        "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.BLL\\Laboratory.BLL.csproj",
+        "packagesPath": "C:\\Users\\amasri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.BLL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amasri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -28,11 +28,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
-                "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj"
+              "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
+                "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj"
               },
-              "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj": {
-                "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj"
+              "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj": {
+                "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj"
               }
             }
           }
@@ -62,26 +62,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
+    "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj",
         "projectName": "Laboratory.DAL",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj",
-        "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.DAL\\obj\\",
+        "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.DAL\\Laboratory.DAL.csproj",
+        "packagesPath": "C:\\Users\\amasri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amasri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -146,26 +160,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj": {
+    "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj",
         "projectName": "Laboratory.Domain",
-        "projectPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj",
-        "packagesPath": "C:\\Users\\Hadi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hadi\\Desktop\\Laboratory\\LaboratoryApp\\Laboratory.Domain\\obj\\",
+        "projectPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Domain\\Laboratory.Domain.csproj",
+        "packagesPath": "C:\\Users\\amasri\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\amasri\\Desktop\\LaboratoryApp\\Laboratory.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Hadi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\amasri\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -200,12 +228,26 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

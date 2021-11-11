@@ -1,0 +1,175 @@
+﻿<UserControl x:Class="Laboratory.UI.Views.Materials"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:local="clr-namespace:Laboratory.UI.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="1000" d:DesignWidth="1800">
+    <UserControl.Resources>
+        <Style x:Key="GBStyled" TargetType="GroupBox">
+            <!-- These 2 setters make the GroupBox less blurry -->
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <!-- Default Background colour -->
+            <Setter Property="Background" Value="White"/>
+            <!-- Template of GroupBox -->
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="GroupBox">
+                        <Grid>
+                            <Grid.Resources>
+                            </Grid.Resources>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" CornerRadius="5,5,0,0" BorderThickness="1" BorderBrush="#24426E" Background="#24426E">
+                                <!-- FontSize of the header is changed via the Templates "Tag" property -->
+                                <Label Foreground="White" FontSize="14" HorizontalAlignment="Center" FontWeight="Bold">
+                                    <!-- DropShadow makes the label standout from the background -->
+                                    <Label.Effect>
+                                        <DropShadowEffect ShadowDepth="0" BlurRadius="3" />
+                                    </Label.Effect>
+                                    <ContentPresenter Margin="0" ContentSource="Header" RecognizesAccessKey="True"/>
+                                </Label>
+                            </Border>
+                            <Border Grid.Row="1" CornerRadius="0,0,5,5" BorderThickness="1,0,1,1" BorderBrush="#24426E" Background="{TemplateBinding Background}">
+                                <ContentPresenter Margin="0" />
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+                <RowDefinition Height="280" />
+                <RowDefinition Height="500*" />
+                <RowDefinition Height="150*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="250"/>
+            </Grid.ColumnDefinitions>
+        <GroupBox Grid.RowSpan="2" Grid.ColumnSpan="3" Grid.Row="0" Style="{StaticResource GBStyled}"  x:Name="materialsGroupBox" BorderThickness="0" materialDesign:ColorZoneAssist.Mode="Custom" Background="#fcfcfc" materialDesign:ColorZoneAssist.Background="#24426E" materialDesign:ColorZoneAssist.Foreground="White"  Header="Add or update material" HorizontalAlignment="Stretch" VerticalAlignment="Top"  Margin="250,50,250,0" Height="250"  >
+            <Border CornerRadius="0,0,5,5" Background="#f2f2f2" BorderBrush="Transparent" BorderThickness="0" Height="60" Margin="0,160,0,0" >
+                <StackPanel  Background="#f2f2f2" Width="758" Height="60"  />
+            </Border>
+        </GroupBox>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Row="0" Grid.Column="0" x:Name="txtMaterialName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="50,100,50,0"  materialDesign:HintAssist.Hint="Name" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43"></TextBox>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtMaterialVolume" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="50,100,50,0"  materialDesign:HintAssist.Hint="Volume" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43" ></TextBox>
+            <DatePicker x:Name="pickerOpenDate"  Grid.Row="0" Grid.Column="2"  materialDesign:HintAssist.Hint="Open Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}" VerticalAlignment="Top"  Margin="40,100,40,0"     HorizontalAlignment="Stretch"  Height="50" />
+            <DatePicker x:Name="pickerExpireDate"  Grid.Row="0" Grid.Column="3"  materialDesign:HintAssist.Hint="Expire Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}" VerticalAlignment="Top"  Margin="50,100,50,0"     HorizontalAlignment="Stretch"  Height="50" />
+            <Button  Grid.Row="0" Grid.Column="3" x:Name="addMaterial"   Background="#090D40" Margin="50,250,150,0"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" >
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text.Length, ElementName=txtMaterialName, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Text.Length, ElementName=txtMaterialVolume, UpdateSourceTrigger=PropertyChanged}" Value="0">
+                                <Setter Property="IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addPatient"  Storyboard.TargetProperty="Background.Color" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation To="#090D40" Storyboard.TargetName="addPatient"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+            <Button  Grid.Row="0" Grid.Column="2" x:Name="newMaterial"   Background="#61637A" Margin="200,250,0,0"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="New" >
+                <Button.Triggers>
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addPatient"  Storyboard.TargetProperty="Background.Color" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <ColorAnimation To="#090D40" Storyboard.TargetName="addPatient"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Button.Triggers>
+            </Button>
+        </Grid>
+       
+        <Grid Grid.RowSpan="2" Grid.Column="1">
+            <DataGrid   x:Name="materialsGrid" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding patientTest}" AutoGenerateColumns="False" VerticalAlignment="Top" Height="450" Margin="0,400,0,0" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
+            <DataGrid.Resources>
+                <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#24426E" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn  Header="Name" Binding="{Binding Name}" IsReadOnly="True" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Volume" Binding="{Binding Volume}" IsReadOnly="True" Width="*"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                <DataGridTextColumn  Header="Open Date" Binding="{Binding OpenDate}" IsReadOnly="True" Width="135"    >
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="{x:Type TextBlock}">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                    <DataGridTextColumn  Header="Expire Date" Binding="{Binding ExpireDate}" IsReadOnly="True" Width="*"    >
+                        <DataGridTextColumn.ElementStyle>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="HorizontalAlignment" Value="Center" />
+                            </Style>
+                        </DataGridTextColumn.ElementStyle>
+                    </DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button x:Name="deletBtn" Click="deletBtn_Click" Background="Transparent" Foreground="#3d070c" BorderThickness="0" Width="20" Height="20"  Padding="0">
+                                    <materialDesign:PackIcon  Kind="AccountRemoveOutline" Height="20" Width="20" />
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+        </DataGrid>
+        </Grid>
+    </Grid>
+</UserControl>

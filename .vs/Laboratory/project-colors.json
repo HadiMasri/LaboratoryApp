@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "d90a7634-cc22-40a5-a3a3-2065c4bb0308": {
+      "ProjectGuid": "d90a7634-cc22-40a5-a3a3-2065c4bb0308",
+      "DisplayName": "Laboratory.API",
+      "ColorIndex": 0
+    },
+    "3c3c3441-1101-4321-b222-21687ff81d56": {
+      "ProjectGuid": "3c3c3441-1101-4321-b222-21687ff81d56",
+      "DisplayName": "Laboratory.UI",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}

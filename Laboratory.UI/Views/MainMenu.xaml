@@ -254,18 +254,24 @@
                             </Grid>
                         </Border>-->
                         <ListView  ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Arial" Foreground="White" FontSize="20" BorderBrush="Transparent" Background="Transparent">
-                    
-                           
-                            <ListViewItem PreviewMouseLeftButtonDown="ListViewItem_PreviewMouseLeftButtonDown"  Height="70" >
+
+
+                            <ListViewItem PreviewMouseLeftButtonDown="Patients_Menu_Clicked"  Height="70" >
                                 <StackPanel  Orientation="Horizontal">
                                     <Image  Source="../Assets/patient.png" Height="50"  Width="50" />
                                     <TextBlock Margin="30,10,0,0"  >Patients</TextBlock>
                                 </StackPanel>
                             </ListViewItem>
-                            <ListViewItem PreviewMouseLeftButtonDown="ListViewItem_PreviewMouseLeftButtonDown_1" Height="70" >
+                            <ListViewItem PreviewMouseLeftButtonDown="Tests_Menu_Clicked" Height="70" >
                                 <StackPanel  Orientation="Horizontal">
                                     <Image  Source="../Assets/Test.png" Margin="10,0,0,0" Height="40"  Width="40" />
                                     <TextBlock Margin="30,10,0,0"  >Tests</TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
+                            <ListViewItem PreviewMouseLeftButtonDown="Meterials_Menu_Clicked" Height="70" >
+                                <StackPanel  Orientation="Horizontal">
+                                    <Image  Source="../Assets/Materials.png" Margin="10,0,0,0" Height="40"  Width="40" />
+                                    <TextBlock Margin="30,10,0,0">Materials</TextBlock>
                                 </StackPanel>
                             </ListViewItem>
                         </ListView>
