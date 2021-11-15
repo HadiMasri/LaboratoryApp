@@ -20,6 +20,8 @@ namespace Laboratory.BLL.Mapper
             CreateMap<TestDto, Test>().ReverseMap();
             CreateMap<TestRangeDto, TestRange>().ReverseMap();
             CreateMap<TitleDto, Title>().ReverseMap();
+            CreateMap<MaterialDto,Material>().ReverseMap();
+
         }
     }
 }

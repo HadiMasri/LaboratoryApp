@@ -71,7 +71,7 @@
             <TextBox Grid.Row="0" Grid.Column="1" x:Name="txtMaterialVolume" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="50,100,50,0"  materialDesign:HintAssist.Hint="Volume" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43" ></TextBox>
             <DatePicker x:Name="pickerOpenDate"  Grid.Row="0" Grid.Column="2"  materialDesign:HintAssist.Hint="Open Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}" VerticalAlignment="Top"  Margin="40,100,40,0"     HorizontalAlignment="Stretch"  Height="50" />
             <DatePicker x:Name="pickerExpireDate"  Grid.Row="0" Grid.Column="3"  materialDesign:HintAssist.Hint="Expire Date" Style="{StaticResource MaterialDesignOutlinedDatePicker}" VerticalAlignment="Top"  Margin="50,100,50,0"     HorizontalAlignment="Stretch"  Height="50" />
-            <Button  Grid.Row="0" Grid.Column="3" x:Name="addMaterial"   Background="#090D40" Margin="50,250,150,0"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" >
+            <Button Click="addMaterial_Click"  Grid.Row="0" Grid.Column="3" x:Name="addMaterial"   Background="#090D40" Margin="50,250,150,0"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Add" >
                 <Button.Style>
                     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
                         <Style.Triggers>
@@ -88,14 +88,14 @@
                     <EventTrigger RoutedEvent="MouseEnter">
                         <BeginStoryboard>
                             <Storyboard>
-                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addPatient"  Storyboard.TargetProperty="Background.Color" />
+                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addMaterial"  Storyboard.TargetProperty="Background.Color" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
                     <EventTrigger RoutedEvent="MouseLeave">
                         <BeginStoryboard>
                             <Storyboard>
-                                <ColorAnimation To="#090D40" Storyboard.TargetName="addPatient"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                                <ColorAnimation To="#090D40" Storyboard.TargetName="addMaterial"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -106,14 +106,14 @@
                     <EventTrigger RoutedEvent="MouseEnter">
                         <BeginStoryboard>
                             <Storyboard>
-                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addPatient"  Storyboard.TargetProperty="Background.Color" />
+                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="addMaterial"  Storyboard.TargetProperty="Background.Color" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
                     <EventTrigger RoutedEvent="MouseLeave">
                         <BeginStoryboard>
                             <Storyboard>
-                                <ColorAnimation To="#090D40" Storyboard.TargetName="addPatient"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                                <ColorAnimation To="#090D40" Storyboard.TargetName="addMaterial"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger>
@@ -122,7 +122,7 @@
         </Grid>
        
         <Grid Grid.RowSpan="2" Grid.Column="1">
-            <DataGrid   x:Name="materialsGrid" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding patientTest}" AutoGenerateColumns="False" VerticalAlignment="Top" Height="450" Margin="0,400,0,0" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
+            <DataGrid   x:Name="materialsGrid" SelectionChanged="materialsGrid_SelectionChanged" SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding materials}" AutoGenerateColumns="False" VerticalAlignment="Top" Height="450" Margin="0,400,0,0" CanUserAddRows="False" SelectionUnit="FullRow" SelectionMode="Extended" >
             <DataGrid.Resources>
                 <Style BasedOn="{StaticResource {x:Type DataGridColumnHeader}}" TargetType="{x:Type DataGridColumnHeader}">
                     <Setter Property="Background" Value="#24426E" />
@@ -163,7 +163,7 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <Button x:Name="deletBtn" Click="deletBtn_Click" Background="Transparent" Foreground="#3d070c" BorderThickness="0" Width="20" Height="20"  Padding="0">
-                                    <materialDesign:PackIcon  Kind="AccountRemoveOutline" Height="20" Width="20" />
+                                    <materialDesign:PackIcon  Kind="DeleteEmpty" Height="20" Width="20" />
                                 </Button>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

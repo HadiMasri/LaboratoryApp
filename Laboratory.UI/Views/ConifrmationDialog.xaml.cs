@@ -21,15 +21,16 @@ namespace Laboratory.UI.Views
         private readonly string _confirmationText;
         private readonly Patients _patients;
         private readonly Tests _tests;
-
+        private readonly Materials _materials;
         private readonly int id;
-        public ConifrmationDialog(string ConfirmationText, int Id, Patients patients = null, Tests tests = null, string imageName = null)
+        public ConifrmationDialog(string ConfirmationText, int Id, Patients patients = null, Tests tests = null, Materials materials = null, string imageName = null)
         {
             InitializeComponent();
             _confirmationText = ConfirmationText;
             id = Id;
             _patients = patients;
             _tests = tests;
+            _materials = materials;
             confirmTxt.Text = ConfirmationText;
             confirmationImg.Source = new BitmapImage(new Uri($"../Assets/{imageName}", UriKind.RelativeOrAbsolute));
 
@@ -48,6 +49,9 @@ namespace Laboratory.UI.Views
             else if (_confirmationText == SD.Test_Delete_Confirmation)
             {
                 _tests.Delete_Patient(id);
+            }else if (_confirmationText == SD.Material_Delete_Confirmation)
+            {
+                _materials.Delete_Material(id);
             }
             this.Close();
         }

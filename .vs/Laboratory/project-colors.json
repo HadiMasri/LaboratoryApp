@@ -10,7 +10,32 @@
       "ProjectGuid": "3c3c3441-1101-4321-b222-21687ff81d56",
       "DisplayName": "Laboratory.UI",
       "ColorIndex": 1
+    },
+    "5ec4fc62-96c2-46bb-89df-a057b0d99835": {
+      "ProjectGuid": "5ec4fc62-96c2-46bb-89df-a057b0d99835",
+      "DisplayName": "Laboratory.Utility",
+      "ColorIndex": 2
+    },
+    "06da0267-c596-4dd4-9939-ed2b8ca0437e": {
+      "ProjectGuid": "06da0267-c596-4dd4-9939-ed2b8ca0437e",
+      "DisplayName": "Laboratory.DAL",
+      "ColorIndex": 3
+    },
+    "4a285de5-aadf-49c4-8a90-fec38a1010bb": {
+      "ProjectGuid": "4a285de5-aadf-49c4-8a90-fec38a1010bb",
+      "DisplayName": "Laboratory.BLL",
+      "ColorIndex": 4
+    },
+    "1deec1b0-742d-4663-b77c-cb12a389f186": {
+      "ProjectGuid": "1deec1b0-742d-4663-b77c-cb12a389f186",
+      "DisplayName": "Laboratory.Domain",
+      "ColorIndex": 5
+    },
+    "3215ab57-7441-48c4-b3ad-ef6d943701c4": {
+      "ProjectGuid": "3215ab57-7441-48c4-b3ad-ef6d943701c4",
+      "DisplayName": "Laboratory.Shared",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 7
 }

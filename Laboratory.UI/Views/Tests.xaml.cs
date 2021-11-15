@@ -150,7 +150,7 @@ namespace Laboratory.UI.Views
         private void Confirm_Click(object sender, RoutedEventArgs e)
         {
             var test = (TestViewModel)testsGrid.SelectedItem;
-            var confirmDialog = new ConifrmationDialog(SD.Test_Delete_Confirmation, test.Id,null, this, "Test.png");
+            var confirmDialog = new ConifrmationDialog(SD.Test_Delete_Confirmation, test.Id,null, this, null,"Test.png");
             confirmDialog.ShowDialog();
         }
 

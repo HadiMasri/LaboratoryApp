@@ -161,7 +161,7 @@ namespace Laboratory.UI.Views
         private  void Confirm_Dialog(object sender, RoutedEventArgs e)
         {
             var patient = (PatientViewModel)patientsGrid.SelectedItem;
-            var confirmDialog = new ConifrmationDialog(SD.Patient_Delete_Confirmation, patient.Id, this,null, "patient.png");
+            var confirmDialog = new ConifrmationDialog(SD.Patient_Delete_Confirmation, patient.Id, this,null,null, "patient.png");
             confirmDialog.ShowDialog();
         }
 
