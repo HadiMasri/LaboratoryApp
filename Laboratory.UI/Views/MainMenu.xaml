@@ -274,6 +274,12 @@
                                     <TextBlock Margin="30,10,0,0">Materials</TextBlock>
                                 </StackPanel>
                             </ListViewItem>
+                            <ListViewItem PreviewMouseLeftButtonDown="Settingss_Menu_Clicked"  Height="70" >
+                                <StackPanel  Orientation="Horizontal">
+                                    <Image  Source="../Assets/settings.png" Margin="10,0,0,0" Height="40"  Width="40" />
+                                    <TextBlock Margin="30,10,0,0">Settings</TextBlock>
+                                </StackPanel>
+                            </ListViewItem>
                         </ListView>
                     </StackPanel>
 

@@ -156,3 +156,5 @@ C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Labo
 C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Laboratory.UI.genruntimeconfig.cache
 C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Materials.g.cs
 C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Materials.baml
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Settings.g.cs
+C:\Users\amasri\Desktop\LaboratoryApp\Laboratory.UI\obj\Debug\netcoreapp3.1\Views\Settings.baml

@@ -99,5 +99,19 @@ namespace Laboratory.UI.Views
                 mainGrid.Children.Add(new Materials());
             }
         }
+
+        private void Settingss_Menu_Clicked(object sender, MouseButtonEventArgs e)
+        {
+            if (Tg_Btn.IsChecked == false)
+            {
+                ShowStackPanel.Begin();
+                Tg_Btn.IsChecked = true;
+            }
+            else
+            {
+                mainGrid.Children.Clear();
+                mainGrid.Children.Add(new Settings());
+            }
+        }
     }
 }

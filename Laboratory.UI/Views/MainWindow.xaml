@@ -102,7 +102,7 @@
                 </ControlTemplate>
             </Button.Template>
         </Button>
-        <Button Width="300" Height="150" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#4A6894" Margin="-900 300 0 0" >
+        <Button Click="Open_Settings_Dialog" Width="300" Height="150" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#4A6894" Margin="-900 300 0 0" >
             <StackPanel>
                 <Image  Source="../Assets/Settings.png" Height="69" RenderTransformOrigin="0.5,0.51" Width="78" />
                 <TextBlock Text="Settings"  Foreground="White" Margin="0 0 0 0" FontSize="20" />

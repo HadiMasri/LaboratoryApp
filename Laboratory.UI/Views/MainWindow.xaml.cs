@@ -50,5 +50,13 @@ namespace Laboratory.UI.Views
             this.Hide();
             mainMEnu.ShowDialog();
         }
+
+        private void Open_Settings_Dialog(object sender, RoutedEventArgs e)
+        {
+            var mainMEnu = new MainMenu(SD.Settings);
+            mainMEnu.Owner = this;
+            this.Hide();
+            mainMEnu.ShowDialog();
+        }
     }
 }

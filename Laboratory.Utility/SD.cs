@@ -13,6 +13,6 @@ namespace Laboratory.Utility
         public const string Patients = "Patients";
         public const string Tests = "Tests";
         public const string Materials = "Materials";
-
+        public const string Settings = "Settings";
     }
 }

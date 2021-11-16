@@ -1,0 +1,73 @@
+﻿<UserControl x:Class="Laboratory.UI.Views.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Laboratory.UI.Views" xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type TextBlock}" x:Key="HorizontalExpanderContentTextBlock">
+            <Setter Property="Opacity" Value=".68"/>
+            <Setter Property="Text" Value="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="{x:Type Border}" x:Key="HorizontalDividerBorder">
+            <Setter Property="Background" Value="{DynamicResource MaterialDesignDivider}"/>
+            <Setter Property="UseLayoutRounding" Value="True"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="Height" Value="1"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <materialDesign:Card>
+            <StackPanel>
+                <Expander Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" >
+                    <Expander.Header>
+                        <DockPanel Height="35" Width="{Binding
+                                RelativeSource={RelativeSource
+                                  Mode=FindAncestor,
+                                  AncestorType={x:Type Expander}},
+                                Path=ActualWidth}">
+                            <Button x:Name="editAddress" DockPanel.Dock="Right" Foreground="White" Content="Edit" Background="Transparent"  BorderThickness="0" Margin="0,0,100,0">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#c0c0c2" Duration="0:0:0.3" Storyboard.TargetName="editAddress"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="White" Storyboard.TargetName="editAddress"  Duration="0:0:0.3"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <TextBlock  FontSize="15" Height="25"  Foreground="White" Text="Address" />
+                        </DockPanel>
+                    </Expander.Header>
+                    <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
+                        <Button Width="55" Content="asdad"/>
+                        <TextBlock Width="55"><Run Text="asdasd"/></TextBlock>
+                    </StackPanel>
+                </Expander>
+                <Expander Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" Header="Address" >
+                    <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
+                        <TextBlock Width="55">asdasd</TextBlock>
+                        <Button Width="55">asdad</Button>
+                    </StackPanel>
+                </Expander>
+                <Expander Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" Header="Address" >
+                    <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
+                        <TextBlock Width="55">asdasd</TextBlock>
+                        <Button Width="55">asdad</Button>
+                    </StackPanel>
+                </Expander>
+            </StackPanel>
+        </materialDesign:Card>
+    </Grid>
+</UserControl>
