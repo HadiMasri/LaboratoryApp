@@ -22,14 +22,14 @@
     <Grid>
         <materialDesign:Card>
             <StackPanel>
-                <Expander Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" >
+                <Expander x:Name="expAddress" Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" >
                     <Expander.Header>
                         <DockPanel Height="35" Width="{Binding
                                 RelativeSource={RelativeSource
                                   Mode=FindAncestor,
                                   AncestorType={x:Type Expander}},
                                 Path=ActualWidth}">
-                            <Button x:Name="editAddress" DockPanel.Dock="Right" Foreground="White" Content="Edit" Background="Transparent"  BorderThickness="0" Margin="0,0,100,0">
+                            <Button x:Name="editAddress" Click="editAddress_Click" DockPanel.Dock="Right" Foreground="White" Content="EDIT" Background="Transparent"  BorderThickness="0" Margin="0,0,100,0">
                                 <Button.Triggers>
                                     <EventTrigger RoutedEvent="MouseEnter">
                                         <BeginStoryboard>
@@ -51,20 +51,188 @@
                         </DockPanel>
                     </Expander.Header>
                     <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <TextBox IsReadOnly="True" Grid.Row="0" Grid.ColumnSpan="2"  x:Name="txtStreetName" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="100,0,50,0"  materialDesign:HintAssist.Hint="Street" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43"></TextBox>
+                            <TextBox IsReadOnly="True"  Grid.Row="0" Grid.Column="2" x:Name="txtNr" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="10,0,100,0"  materialDesign:HintAssist.Hint="Nr" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43"></TextBox>
+                            <TextBox IsReadOnly="True"  Grid.Row="1" Grid.ColumnSpan="2" x:Name="txtPostCode" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="100,0,50,0"  materialDesign:HintAssist.Hint="Post Code" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43"></TextBox>
+                            <TextBox IsReadOnly="True"  Grid.Row="1" Grid.Column="2" x:Name="txtProvincie" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="10,0,0,0"  materialDesign:HintAssist.Hint="Provincie" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43"></TextBox>
+                            <TextBox IsReadOnly="True"   Grid.Row="2" Grid.ColumnSpan="3" x:Name="txtCountry" Style="{StaticResource MaterialDesignFloatingHintTextBox}" VerticalAlignment="Top"  Margin="100,0,0,0"  materialDesign:HintAssist.Hint="Provincie" TextWrapping="Wrap"  HorizontalAlignment="Stretch"  Height="43"></TextBox>
+                            <Button Visibility="Hidden" Click="saveAddress_Click" x:Name="saveAddress" Grid.Row="3" Grid.ColumnSpan="4"  Width="100" Background="#090D40" Margin="450,20,0,10"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Save" >
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="saveAddress"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#090D40" Storyboard.TargetName="saveAddress"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Button Visibility="Hidden" Click="cancelAddress_Click" x:Name="cancelAddress" Grid.Row="3" Grid.ColumnSpan="3"  Width="100" Background="#8f000a" Margin="350,20,0,10"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Cancel" >
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#ba0d19" Duration="0:0:0.3" Storyboard.TargetName="cancelAddress"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#8f000a" Storyboard.TargetName="cancelAddress"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </Grid>
+                       
+
+                    </StackPanel>
+                </Expander>
+                <Expander x:Name="expFont" Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" >
+                    <Expander.Header>
+                        <DockPanel Height="35" Width="{Binding
+                                RelativeSource={RelativeSource
+                                  Mode=FindAncestor,
+                                  AncestorType={x:Type Expander}},
+                                Path=ActualWidth}">
+                            <Button x:Name="editFont" Click="editFont_Click" DockPanel.Dock="Right" Foreground="White" Content="EDIT" Background="Transparent"  BorderThickness="0" Margin="0,0,100,0">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#c0c0c2" Duration="0:0:0.3" Storyboard.TargetName="editFont"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="White" Storyboard.TargetName="editFont"  Duration="0:0:0.3"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <TextBlock  FontSize="15" Height="25"  Foreground="White" Text="Font and Logo" />
+                        </DockPanel>
+                    </Expander.Header>
+                    <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <ComboBox x:Name="comboFont" IsEnabled="False" Grid.Row="0" Grid.Column="0" SelectionChanged="comboFont_SelectionChanged" ItemsSource="{Binding Source={x:Static Fonts.SystemFontFamilies}}" HorizontalAlignment="Stretch"   materialDesign:HintAssist.Hint="Choose font" Margin="20,0,20,0"  VerticalAlignment="Top" Height="43"   Style="{StaticResource MaterialDesignFloatingHintComboBox}">
+                                <ComboBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <VirtualizingStackPanel />
+                                    </ItemsPanelTemplate>
+                                </ComboBox.ItemsPanel>
+                            </ComboBox>
+                            <Label x:Name="lblFont" Grid.Row="0" Grid.Column="0" Margin="20,50,10,10" FontSize="20">Chosen Font</Label>
+                            <Button Click="saveFontAndLogo_Click"  x:Name="saveFontAndLogo" Grid.Row="3" Grid.ColumnSpan="4"  Width="100" Background="#090D40" Margin="450,20,0,10"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Save" >
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#010424" Duration="0:0:0.3" Storyboard.TargetName="saveAddress"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#090D40" Storyboard.TargetName="saveAddress"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Button  Click="cancelFontAndLogo_Click"  x:Name="cancelFontAndLogo" Grid.Row="3" Grid.ColumnSpan="3"  Width="100" Background="#8f000a" Margin="350,20,0,10"   VerticalAlignment="Top" ToolTip="Resource name: MaterialDesignRaisedLightDarkButton" Content="Cancel" >
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#ba0d19" Duration="0:0:0.3" Storyboard.TargetName="cancelAddress"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#8f000a" Storyboard.TargetName="cancelAddress"  Duration="0:0:0.3"  Storyboard.TargetProperty="Background.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <Image Grid.Column="3" x:Name="imgLogo"  HorizontalAlignment="Left" Height="100" Margin="50,20,0,100" Grid.RowSpan="4" VerticalAlignment="Top" Width="100"/>
+                            <Button  Grid.Column="2"  Content="Browse" Height="32" HorizontalAlignment="Left" Margin="0,10,0,0"  Name="button1" VerticalAlignment="Top" Width="88" Click="button1_Click" />
+                        </Grid>
+                    </StackPanel>
+                </Expander>
+                <Expander x:Name="expLogo" Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" >
+                    <Expander.Header>
+                        <DockPanel Height="35" Width="{Binding
+                                RelativeSource={RelativeSource
+                                  Mode=FindAncestor,
+                                  AncestorType={x:Type Expander}},
+                                Path=ActualWidth}">
+                            <Button x:Name="editLogo" DockPanel.Dock="Right" Foreground="White" Content="EDIT" Background="Transparent"  BorderThickness="0" Margin="0,0,100,0">
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="MouseEnter">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="#c0c0c2" Duration="0:0:0.3" Storyboard.TargetName="editLogo"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                    <EventTrigger RoutedEvent="MouseLeave">
+                                        <BeginStoryboard>
+                                            <Storyboard>
+                                                <ColorAnimation To="White" Storyboard.TargetName="editLogo"  Duration="0:0:0.3"  Storyboard.TargetProperty="Foreground.Color" />
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Button.Triggers>
+                            </Button>
+                            <TextBlock  FontSize="15" Height="25"  Foreground="White" Text="Logo" />
+                        </DockPanel>
+                    </Expander.Header>
+                    <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
                         <Button Width="55" Content="asdad"/>
                         <TextBlock Width="55"><Run Text="asdasd"/></TextBlock>
-                    </StackPanel>
-                </Expander>
-                <Expander Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" Header="Address" >
-                    <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
-                        <TextBlock Width="55">asdasd</TextBlock>
-                        <Button Width="55">asdad</Button>
-                    </StackPanel>
-                </Expander>
-                <Expander Margin="20,20,20,20" HorizontalAlignment="Stretch" Background="#010221" Foreground="White" Header="Address" >
-                    <StackPanel Background="White" Width="auto" Height="auto" Orientation="Vertical" TextBlock.Foreground="{DynamicResource MaterialDesignBody}" >
-                        <TextBlock Width="55">asdasd</TextBlock>
-                        <Button Width="55">asdad</Button>
                     </StackPanel>
                 </Expander>
             </StackPanel>

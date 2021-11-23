@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Laboratory.DAL.Migrations
 {
-    public partial class unitAddedToTest : Migration
+    public partial class settingsAdded : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,6 +39,19 @@ namespace Laboratory.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "DiscountTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DiscountTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Gender",
                 columns: table => new
                 {
@@ -63,6 +77,35 @@ namespace Laboratory.DAL.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Labos", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Materials",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Volume = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    OpenDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ExpireDate = table.Column<DateTime>(type: "datetime2", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Materials", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Settings",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Image = table.Column<byte[]>(type: "varbinary(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Settings", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -227,12 +270,21 @@ namespace Laboratory.DAL.Migrations
                 });
 
             migrationBuilder.InsertData(
+                table: "DiscountTypes",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Precentage" },
+                    { 2, "Amount" }
+                });
+
+            migrationBuilder.InsertData(
                 table: "Gender",
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Male" },
-                    { 2, "Female" }
+                    { 2, "Female" },
+                    { 1, "Male" }
                 });
 
             migrationBuilder.InsertData(
@@ -240,8 +292,8 @@ namespace Laboratory.DAL.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
-                    { 2, "Mrs" },
-                    { 1, "Mr" }
+                    { 1, "Mr" },
+                    { 2, "Mrs" }
                 });
 
             migrationBuilder.InsertData(
@@ -249,6 +301,7 @@ namespace Laboratory.DAL.Migrations
                 columns: new[] { "Id", "Name" },
                 values: new object[,]
                 {
+                    { 11, "L" },
                     { 1, "mg/l" },
                     { 2, "mg/dl" },
                     { 3, "mmole/l" },
@@ -259,7 +312,6 @@ namespace Laboratory.DAL.Migrations
                     { 8, "%" },
                     { 9, "min" },
                     { 10, "sec" },
-                    { 11, "L" },
                     { 12, "pg/ml" }
                 });
 
@@ -310,10 +362,19 @@ namespace Laboratory.DAL.Migrations
                 name: "Adress");
 
             migrationBuilder.DropTable(
+                name: "DiscountTypes");
+
+            migrationBuilder.DropTable(
                 name: "Labos");
 
             migrationBuilder.DropTable(
+                name: "Materials");
+
+            migrationBuilder.DropTable(
                 name: "Patient_Tests");
+
+            migrationBuilder.DropTable(
+                name: "Settings");
 
             migrationBuilder.DropTable(
                 name: "TestRanges");

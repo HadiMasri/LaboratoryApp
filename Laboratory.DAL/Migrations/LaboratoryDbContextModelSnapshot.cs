@@ -322,6 +322,21 @@ namespace Laboratory.DAL.Migrations
                     b.ToTable("Patient_Tests");
                 });
 
+            modelBuilder.Entity("Laboratory.DAL.Entities.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("varbinary(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Settings");
+                });
+
             modelBuilder.Entity("Laboratory.DAL.Entities.Test", b =>
                 {
                     b.Property<int>("Id")

@@ -17,6 +17,7 @@ namespace Laboratory.DAL
         public DbSet<Labo> Labos { get; set; }
         public DbSet<Patient> Patients { get; set; }
         public DbSet<Material> Materials { get; set; }
+        public DbSet<Setting> Settings { get; set; }
 
         public DbSet<Patient_Test> Patient_Tests { get; set; }
         public DbSet<Test> Tests { get; set; }

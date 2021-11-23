@@ -15,6 +15,7 @@
     <None Remove="Assets\settings.png" />
     <None Remove="Assets\Test.png" />
     <None Remove="Assets\tgBtn_default.png" />
+    <None Remove="Views\Lays-Logo.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,6 +40,7 @@
     <Resource Include="Assets\Test.png" />
     <Resource Include="Assets\patient.png" />
     <Resource Include="Assets\tgBtn_default.png" />
+    <Resource Include="Views\Lays-Logo.png" />
   </ItemGroup>
 
 </Project>

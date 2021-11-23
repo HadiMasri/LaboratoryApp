@@ -22,6 +22,8 @@ namespace Laboratory.DAL.UnitOfWork
             PatientTest = new PatientTestRepository(_dbContext, _mapper);
             DiscountType = new DiscountTypeRepository(_dbContext, _mapper);
             Material = new MaterialRepository(_dbContext, _mapper);
+            Setting = new SettingRepository(_dbContext, _mapper);
+
 
         }
         public void Dispose()
@@ -34,6 +36,7 @@ namespace Laboratory.DAL.UnitOfWork
         public IGenderRepository Gender { get; private set; }
         public ITestRepository Test { get; private set; }
         public ICategoryRepository Category { get; private set; }
+        public ISettingRepository Setting { get; private set; }
         public IMaterialRepository Material { get; private set; }
         public IDiscountTypeRepository DiscountType { get; private set; }
         public IUnitRepository Unit { get; private set; }
